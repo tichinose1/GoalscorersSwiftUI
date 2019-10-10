@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CurrentSeason: View {
+struct Current: View {
     var body: some View {
         List {
             ForEach(Range(1...20)) { _ in
@@ -21,6 +21,6 @@ struct CurrentSeason: View {
 
 struct CurrentSeason_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentSeason()
+        Current()
     }
 }
