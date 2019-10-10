@@ -23,15 +23,34 @@ struct ContentView: View {
                 }
             }
             .tag(0)
-            Text("Second View")
-                .font(.title)
-                .tabItem {
-                    VStack {
-                        Image("second")
-                        Text("Second")
-                    }
+            Maps()
+            .tabItem {
+                VStack {
+                    Image(systemName: "map")
+                    Text("Maps")
                 }
-                .tag(1)
+            }
+            .tag(1)
+            NavigationView {
+                Overall()
+            }
+            .tabItem {
+                VStack {
+                    Image(systemName: "clock")
+                    Text("All-time")
+                }
+            }
+            .tag(2)
+            NavigationView {
+                Players()
+            }
+            .tabItem {
+                VStack {
+                    Image(systemName: "person")
+                    Text("Players")
+                }
+            }
+            .tag(3)
         }
     }
 }
