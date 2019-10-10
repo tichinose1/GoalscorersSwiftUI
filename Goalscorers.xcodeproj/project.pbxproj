@@ -56,7 +56,6 @@
 				FF06B3AA3195428882FB1296 /* Pods-Goalscorers.debug.xcconfig */,
 				692EB31DBB874F0AC8C9EF7D /* Pods-Goalscorers.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
