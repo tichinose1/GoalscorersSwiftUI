@@ -13,7 +13,7 @@ struct Current: View {
 
     var body: some View {
         List(items) { item in
-            NavigationLink(destination: Text(item.name)) {
+            NavigationLink(destination: SafariView(url: item.url)) {
                 ScorerRow(scorer: item)
             }
         }
