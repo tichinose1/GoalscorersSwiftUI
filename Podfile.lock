@@ -109,6 +109,7 @@ PODS:
   - gRPC-Core/Interface (1.21.0)
   - GTMSessionFetcher/Core (1.2.2)
   - leveldb-library (1.22)
+  - LicensePlist (2.8.1)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -121,6 +122,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
+  - LicensePlist
   - SwiftLint
 
 SPEC REPOS:
@@ -143,6 +145,7 @@ SPEC REPOS:
     - gRPC-Core
     - GTMSessionFetcher
     - leveldb-library
+    - LicensePlist
     - nanopb
     - Protobuf
     - SwiftLint
@@ -166,10 +169,11 @@ SPEC CHECKSUMS:
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  LicensePlist: 9753bef02d88487a902959033dd0d19055996808
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
   SwiftLint: 5553187048b900c91aa03552807681bb6b027846
 
-PODFILE CHECKSUM: eed9ecaf81f29a70fd1f084c9691dfe3b329e506
+PODFILE CHECKSUM: 0927e1b935d3c4f6c488ea8651737a62d4112d11
 
 COCOAPODS: 1.8.3

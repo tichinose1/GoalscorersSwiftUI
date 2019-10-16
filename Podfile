@@ -7,6 +7,7 @@ target 'Goalscorers' do
 
   # Pods for Goalscorers
   pod 'SwiftLint'
+  pod 'LicensePlist'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
