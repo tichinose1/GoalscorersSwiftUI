@@ -7,17 +7,40 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct Current: View {
-    var items: [Scorer] = []
+    @State var items: [QueryDocumentSnapshot] = []
 
     var body: some View {
-        List(items) { item in
-            NavigationLink(destination: SafariView(url: item.url)) {
-                ScorerRow(scorer: item)
-            }
+//        List(items) { item in
+//            NavigationLink(destination: SafariView(url: item.url)) {
+//                ScorerRow(scorer: item)
+//            }
+//        }
+        List(items, id: \.documentID) { item in
+            Text("")
         }
         .navigationBarTitle("Current season")
+        .onAppear { self.onAppear() }
+    }
+}
+
+private extension Current {
+
+    func onAppear() {
+        Firestore
+            .firestore()
+            .collection("scorers")
+            .whereField("season", isGreaterThan: "2018")
+            .addSnapshotListener { snapshot, error in
+                print("snapshot?.metadata.isFromCache: \(snapshot?.metadata.isFromCache)")
+                // TODO: エラー処理
+                guard let documents = snapshot?.documents else { return }
+                self.items = documents.sorted {
+                    ($0["order"] as! Int) > ($1["order"] as! Int)
+                }
+        }
     }
 }
 
@@ -32,9 +55,7 @@ struct ScorerRow: View {
 struct CurrentSeason_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            Current(items: [
-                Scorer(id: "1", name: "UEFA Euro 1996", url: URL(string: "https://en.wikipedia.org/wiki/UEFA_Euro_1996#Goalscorers")!)
-            ])
+            Current()
         }
     }
 }
