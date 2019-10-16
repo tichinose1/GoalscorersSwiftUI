@@ -6,5 +6,7 @@ target 'Goalscorers' do
   use_frameworks!
 
   # Pods for Goalscorers
-
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 end

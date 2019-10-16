@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		77BD3688234F6C1700ECC3DD /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD3687234F6C1700ECC3DD /* Maps.swift */; };
 		77BD368A234F6D7A00ECC3DD /* Overall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD3689234F6D7A00ECC3DD /* Overall.swift */; };
 		77BD368C234F6E3700ECC3DD /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD368B234F6E3700ECC3DD /* Players.swift */; };
+		77C18953235752030028C5B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77C18952235752030028C5B0 /* GoogleService-Info.plist */; };
 		C4A1DE4E76FFE6C3A432F153 /* Pods_Goalscorers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426EAAF84CDC81EA63DCFE53 /* Pods_Goalscorers.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		77BD3687234F6C1700ECC3DD /* Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
 		77BD3689234F6D7A00ECC3DD /* Overall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overall.swift; sourceTree = "<group>"; };
 		77BD368B234F6E3700ECC3DD /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
+		77C18952235752030028C5B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF06B3AA3195428882FB1296 /* Pods-Goalscorers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goalscorers.debug.xcconfig"; path = "Target Support Files/Pods-Goalscorers/Pods-Goalscorers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				77A1F8F0234E088D0022D081 /* LaunchScreen.storyboard */,
 				77A1F8F3234E088D0022D081 /* Info.plist */,
 				77A1F8ED234E088D0022D081 /* Preview Content */,
+				77C18952235752030028C5B0 /* GoogleService-Info.plist */,
 			);
 			path = Goalscorers;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				77A1F8DE234E088B0022D081 /* Sources */,
 				77A1F8DF234E088B0022D081 /* Frameworks */,
 				77A1F8E0234E088B0022D081 /* Resources */,
+				B531F3EC3EE85C66E9366726 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77A1F8F2234E088D0022D081 /* LaunchScreen.storyboard in Resources */,
+				77C18953235752030028C5B0 /* GoogleService-Info.plist in Resources */,
 				77A1F8EF234E088D0022D081 /* Preview Assets.xcassets in Resources */,
 				77A1F8EC234E088D0022D081 /* Assets.xcassets in Resources */,
 			);
@@ -201,6 +206,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B531F3EC3EE85C66E9366726 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Goalscorers/Pods-Goalscorers-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Goalscorers/Pods-Goalscorers-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Goalscorers/Pods-Goalscorers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E27A8F158DA877C877769349 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
