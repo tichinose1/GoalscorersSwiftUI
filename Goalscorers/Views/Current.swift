@@ -13,13 +13,8 @@ struct Current: View {
     @State var items: [QueryDocumentSnapshot] = []
 
     var body: some View {
-//        List(items) { item in
-//            NavigationLink(destination: SafariView(url: item.url)) {
-//                ScorerRow(scorer: item)
-//            }
-//        }
-        List(items, id: \.documentID) { item in
-            Text("")
+        List(items) { item in
+            Text(item.id)
         }
         .navigationBarTitle("Current season")
         .onAppear { self.onAppear() }
@@ -34,21 +29,13 @@ private extension Current {
             .collection("scorers")
             .whereField("season", isGreaterThan: "2018")
             .addSnapshotListener { snapshot, error in
-                print("snapshot?.metadata.isFromCache: \(snapshot?.metadata.isFromCache)")
-                // TODO: エラー処理
-                guard let documents = snapshot?.documents else { return }
-                self.items = documents.sorted {
-                    ($0["order"] as! Int) > ($1["order"] as! Int)
+                if let error = error {
+                    print(error)
+                    return
                 }
+                guard let snapshot = snapshot else { return }
+                self.items = snapshot.documents
         }
-    }
-}
-
-struct ScorerRow: View {
-    var scorer: Scorer
-
-    var body: some View {
-        Text(scorer.name)
     }
 }
 

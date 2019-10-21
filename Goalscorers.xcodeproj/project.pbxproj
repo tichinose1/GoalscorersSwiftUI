@@ -20,6 +20,7 @@
 		77BD368A234F6D7A00ECC3DD /* Overall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD3689234F6D7A00ECC3DD /* Overall.swift */; };
 		77BD368C234F6E3700ECC3DD /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD368B234F6E3700ECC3DD /* Players.swift */; };
 		77C18953235752030028C5B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77C18952235752030028C5B0 /* GoogleService-Info.plist */; };
+		77D3853F235DED8D0040AC5F /* QueryDocumentSnapshot+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3853E235DED8D0040AC5F /* QueryDocumentSnapshot+.swift */; };
 		C4A1DE4E76FFE6C3A432F153 /* Pods_Goalscorers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426EAAF84CDC81EA63DCFE53 /* Pods_Goalscorers.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		77BD3689234F6D7A00ECC3DD /* Overall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overall.swift; sourceTree = "<group>"; };
 		77BD368B234F6E3700ECC3DD /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		77C18952235752030028C5B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		77D3853E235DED8D0040AC5F /* QueryDocumentSnapshot+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QueryDocumentSnapshot+.swift"; sourceTree = "<group>"; };
 		FF06B3AA3195428882FB1296 /* Pods-Goalscorers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goalscorers.debug.xcconfig"; path = "Target Support Files/Pods-Goalscorers/Pods-Goalscorers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 			children = (
 				77BD3684234F690500ECC3DD /* Views */,
 				77AD840E2350C38F00A043B7 /* Models */,
+				77D3853D235DED6A0040AC5F /* Utilities */,
 				77A1F8E5234E088B0022D081 /* AppDelegate.swift */,
 				77A1F8E7234E088B0022D081 /* SceneDelegate.swift */,
 				77A1F8E9234E088B0022D081 /* ContentView.swift */,
@@ -126,6 +129,14 @@
 				77AD84112350C9D800A043B7 /* SafariView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		77D3853D235DED6A0040AC5F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				77D3853E235DED8D0040AC5F /* QueryDocumentSnapshot+.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		CC3E2C5C2F7DB63357A4FD92 /* Frameworks */ = {
@@ -261,6 +272,7 @@
 				77AD84102350C3AA00A043B7 /* Scorer.swift in Sources */,
 				77A1F8EA234E088B0022D081 /* ContentView.swift in Sources */,
 				77BD3688234F6C1700ECC3DD /* Maps.swift in Sources */,
+				77D3853F235DED8D0040AC5F /* QueryDocumentSnapshot+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
