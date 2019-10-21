@@ -15,10 +15,11 @@ struct SafariView: UIViewControllerRepresentable {
 
     var url: URL
 
-    func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
+    func makeUIViewController(context: Context) -> SFSafariViewController {
         return SFSafariViewController(url: url)
     }
 
-    func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SafariView>) {
+    func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {
+        print(#function)
     }
 }
