@@ -22,6 +22,7 @@
 		77C18953235752030028C5B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77C18952235752030028C5B0 /* GoogleService-Info.plist */; };
 		77D3853F235DED8D0040AC5F /* QueryDocumentSnapshot+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3853E235DED8D0040AC5F /* QueryDocumentSnapshot+.swift */; };
 		77D38541235EFB6A0040AC5F /* ScorerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D38540235EFB6A0040AC5F /* ScorerView.swift */; };
+		77D38543235F4F8E0040AC5F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D38542235F4F8E0040AC5F /* MapView.swift */; };
 		C4A1DE4E76FFE6C3A432F153 /* Pods_Goalscorers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426EAAF84CDC81EA63DCFE53 /* Pods_Goalscorers.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		77C18952235752030028C5B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		77D3853E235DED8D0040AC5F /* QueryDocumentSnapshot+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QueryDocumentSnapshot+.swift"; sourceTree = "<group>"; };
 		77D38540235EFB6A0040AC5F /* ScorerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorerView.swift; sourceTree = "<group>"; };
+		77D38542235F4F8E0040AC5F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		FF06B3AA3195428882FB1296 /* Pods-Goalscorers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goalscorers.debug.xcconfig"; path = "Target Support Files/Pods-Goalscorers/Pods-Goalscorers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 				77BD368B234F6E3700ECC3DD /* Players.swift */,
 				77AD84112350C9D800A043B7 /* SafariView.swift */,
 				77D38540235EFB6A0040AC5F /* ScorerView.swift */,
+				77D38542235F4F8E0040AC5F /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77A1F8E6234E088B0022D081 /* AppDelegate.swift in Sources */,
+				77D38543235F4F8E0040AC5F /* MapView.swift in Sources */,
 				77AD84122350C9D800A043B7 /* SafariView.swift in Sources */,
 				77A1F8E8234E088B0022D081 /* SceneDelegate.swift in Sources */,
 				77D38541235EFB6A0040AC5F /* ScorerView.swift in Sources */,
