@@ -10,11 +10,17 @@ import SwiftUI
 import Firebase
 
 struct Current: View {
-    @State var items: [QueryDocumentSnapshot] = []
+    @State private var items: [QueryDocumentSnapshot] = []
+    @State private var showSheet = false
 
     var body: some View {
         List(items) { item in
-            ScorerView(item: item)
+            Button(action: { self.showSheet = true }) {
+                ScorerView(item: item)
+            }
+            .sheet(isPresented: self.$showSheet) {
+                SafariView(url: URL(string: (item.data()["url"] as! String))!)
+            }
         }
         .navigationBarTitle("Current season")
         .onAppear { self.onAppear() }
