@@ -14,7 +14,7 @@ struct Current: View {
 
     var body: some View {
         List(items) { item in
-            Text(item.id)
+            ScorerView(item: item)
         }
         .navigationBarTitle("Current season")
         .onAppear { self.onAppear() }
