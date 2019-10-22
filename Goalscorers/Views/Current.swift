@@ -11,19 +11,30 @@ import Firebase
 
 struct Current: View {
     @State private var items: [QueryDocumentSnapshot] = []
-    @State private var showSheet = false
+    @State private var isPresented = false
 
     var body: some View {
         List(items) { item in
-            Button(action: { self.showSheet = true }) {
-                ScorerView(item: item)
+            Button(action: { self.isPresented = true }) {
+                ScorerView(title: item.title)
             }
-            .sheet(isPresented: self.$showSheet) {
-                SafariView(url: URL(string: (item.data()["url"] as! String))!)
+            .sheet(isPresented: self.$isPresented) {
+                SafariView(url: item.url)
             }
         }
         .navigationBarTitle("Current season")
         .onAppear { self.onAppear() }
+    }
+}
+
+private extension QueryDocumentSnapshot {
+
+    var title: String {
+        data()["title"] as! String
+    }
+
+    var url: URL {
+        URL(string: data()["url"] as! String)!
     }
 }
 

@@ -7,25 +7,17 @@
 //
 
 import SwiftUI
-import Firebase
 
 struct ScorerView: View {
-    var item: QueryDocumentSnapshot!
+    var title: String
 
     var body: some View {
-        Text(item.title)
-    }
-}
-
-private extension QueryDocumentSnapshot {
-
-    var title: String {
-        data()["title"] as! String
+        Text(title)
     }
 }
 
 struct ScorerView_Previews: PreviewProvider {
     static var previews: some View {
-        ScorerView()
+        ScorerView(title: "a")
     }
 }
