@@ -13,7 +13,6 @@
 		77A1F8EC234E088D0022D081 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A1F8EB234E088D0022D081 /* Assets.xcassets */; };
 		77A1F8EF234E088D0022D081 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A1F8EE234E088D0022D081 /* Preview Assets.xcassets */; };
 		77A1F8F2234E088D0022D081 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A1F8F0234E088D0022D081 /* LaunchScreen.storyboard */; };
-		77AD84102350C3AA00A043B7 /* Scorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AD840F2350C3AA00A043B7 /* Scorer.swift */; };
 		77AD84122350C9D800A043B7 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AD84112350C9D800A043B7 /* SafariView.swift */; };
 		77BD3686234F692D00ECC3DD /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD3685234F692D00ECC3DD /* Current.swift */; };
 		77BD3688234F6C1700ECC3DD /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD3687234F6C1700ECC3DD /* Maps.swift */; };
@@ -37,7 +36,6 @@
 		77A1F8EE234E088D0022D081 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		77A1F8F1234E088D0022D081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77A1F8F3234E088D0022D081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		77AD840F2350C3AA00A043B7 /* Scorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scorer.swift; sourceTree = "<group>"; };
 		77AD84112350C9D800A043B7 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		77BD3685234F692D00ECC3DD /* Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Current.swift; sourceTree = "<group>"; };
 		77BD3687234F6C1700ECC3DD /* Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
@@ -69,6 +67,40 @@
 				692EB31DBB874F0AC8C9EF7D /* Pods-Goalscorers.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7782C11F23608A2B0071B617 /* Current */ = {
+			isa = PBXGroup;
+			children = (
+				77BD3685234F692D00ECC3DD /* Current.swift */,
+				77D38540235EFB6A0040AC5F /* ScorerView.swift */,
+			);
+			path = Current;
+			sourceTree = "<group>";
+		};
+		7782C12023608A460071B617 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				77BD3687234F6C1700ECC3DD /* Maps.swift */,
+				77D38542235F4F8E0040AC5F /* MapView.swift */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
+		7782C12123608A4F0071B617 /* Alltime */ = {
+			isa = PBXGroup;
+			children = (
+				77BD3689234F6D7A00ECC3DD /* Overall.swift */,
+			);
+			path = Alltime;
+			sourceTree = "<group>";
+		};
+		7782C12223608A700071B617 /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				77BD368B234F6E3700ECC3DD /* Players.swift */,
+			);
+			path = Players;
 			sourceTree = "<group>";
 		};
 		77A1F8D9234E088B0022D081 = {
@@ -118,7 +150,6 @@
 		77AD840E2350C38F00A043B7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				77AD840F2350C3AA00A043B7 /* Scorer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -126,13 +157,11 @@
 		77BD3684234F690500ECC3DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				77BD3685234F692D00ECC3DD /* Current.swift */,
-				77BD3687234F6C1700ECC3DD /* Maps.swift */,
-				77BD3689234F6D7A00ECC3DD /* Overall.swift */,
-				77BD368B234F6E3700ECC3DD /* Players.swift */,
+				7782C11F23608A2B0071B617 /* Current */,
+				7782C12023608A460071B617 /* Maps */,
+				7782C12123608A4F0071B617 /* Alltime */,
+				7782C12223608A700071B617 /* Players */,
 				77AD84112350C9D800A043B7 /* SafariView.swift */,
-				77D38540235EFB6A0040AC5F /* ScorerView.swift */,
-				77D38542235F4F8E0040AC5F /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,7 +306,6 @@
 				77BD3686234F692D00ECC3DD /* Current.swift in Sources */,
 				77BD368C234F6E3700ECC3DD /* Players.swift in Sources */,
 				77BD368A234F6D7A00ECC3DD /* Overall.swift in Sources */,
-				77AD84102350C3AA00A043B7 /* Scorer.swift in Sources */,
 				77A1F8EA234E088B0022D081 /* ContentView.swift in Sources */,
 				77BD3688234F6C1700ECC3DD /* Maps.swift in Sources */,
 				77D3853F235DED8D0040AC5F /* QueryDocumentSnapshot+.swift in Sources */,
