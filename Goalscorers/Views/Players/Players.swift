@@ -7,12 +7,17 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct Players: View {
+    @State private var items: [QueryDocumentSnapshot] = []
+
     var body: some View {
         NavigationView {
-            Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
-                .navigationBarTitle("Players")
+            List(items) { item in
+                PlayerRow(name: item.data()["name"] as! String)
+            }
+            .navigationBarTitle("Players")
         }
     }
 }
