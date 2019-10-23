@@ -23,24 +23,19 @@ struct ContentView: View {
                 }
             }
             .tag(0)
-            Maps()
-            .tabItem {
+            Maps().tabItem {
                 VStack {
                     Image(systemName: "map")
                     Text("Maps")
                 }
             }
             .tag(1)
-            NavigationView {
-                Overall()
-            }
-            .tabItem {
+            Overall().tabItem {
                 VStack {
                     Image(systemName: "clock")
                     Text("All-time")
                 }
-            }
-            .tag(2)
+            }.tag(2)
             NavigationView {
                 Players()
             }

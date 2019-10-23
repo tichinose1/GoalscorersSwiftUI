@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7733B78D23608C75007BEC73 /* AlltimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7733B78C23608C75007BEC73 /* AlltimeRow.swift */; };
 		77A1F8E6234E088B0022D081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A1F8E5234E088B0022D081 /* AppDelegate.swift */; };
 		77A1F8E8234E088B0022D081 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A1F8E7234E088B0022D081 /* SceneDelegate.swift */; };
 		77A1F8EA234E088B0022D081 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A1F8E9234E088B0022D081 /* ContentView.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		426EAAF84CDC81EA63DCFE53 /* Pods_Goalscorers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Goalscorers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		692EB31DBB874F0AC8C9EF7D /* Pods-Goalscorers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goalscorers.release.xcconfig"; path = "Target Support Files/Pods-Goalscorers/Pods-Goalscorers.release.xcconfig"; sourceTree = "<group>"; };
+		7733B78C23608C75007BEC73 /* AlltimeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlltimeRow.swift; sourceTree = "<group>"; };
 		77A1F8E2234E088B0022D081 /* Goalscorers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goalscorers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A1F8E5234E088B0022D081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77A1F8E7234E088B0022D081 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				77BD3689234F6D7A00ECC3DD /* Overall.swift */,
+				7733B78C23608C75007BEC73 /* AlltimeRow.swift */,
 			);
 			path = Alltime;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				77A1F8EA234E088B0022D081 /* ContentView.swift in Sources */,
 				77BD3688234F6C1700ECC3DD /* Maps.swift in Sources */,
 				77D3853F235DED8D0040AC5F /* QueryDocumentSnapshot+.swift in Sources */,
+				7733B78D23608C75007BEC73 /* AlltimeRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

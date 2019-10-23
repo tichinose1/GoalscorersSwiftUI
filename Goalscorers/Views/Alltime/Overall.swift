@@ -7,11 +7,50 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct Overall: View {
+    @State private var items: [QueryDocumentSnapshot] = []
+    @State private var isPresented: Bool = false
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List(items) { item in
+                Button(action: { self.isPresented = true }) {
+                    AlltimeRow(name: item.name)
+                }
+                .sheet(isPresented: self.$isPresented) {
+                    SafariView(url: item.url)
+                }
+            }
             .navigationBarTitle("All-time top scorers")
+        }
+        .onAppear(perform: self.onAppear)
+    }
+}
+
+private extension Overall {
+
+    func onAppear() {
+        Firestore.firestore().collection("overall_scorers").addSnapshotListener { snapshot, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let snapshot = snapshot else { return }
+            self.items = snapshot.documents
+        }
+    }
+}
+
+private extension QueryDocumentSnapshot {
+
+    var name: String {
+        "hoge"
+    }
+
+    var url: URL {
+        URL(string: data()["url"] as! String)!
     }
 }
 
