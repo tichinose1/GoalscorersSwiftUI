@@ -9,15 +9,15 @@
 import SwiftUI
 
 struct ScorerView: View {
-    var title: String
+    var name: String
 
     var body: some View {
-        Text(title)
+        Text(name)
     }
 }
 
 struct ScorerView_Previews: PreviewProvider {
     static var previews: some View {
-        ScorerView(title: "a")
+        ScorerView(name: "a")
     }
 }

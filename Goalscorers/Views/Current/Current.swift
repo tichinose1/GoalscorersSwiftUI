@@ -16,7 +16,7 @@ struct Current: View {
     var body: some View {
         List(items) { item in
             Button(action: { self.isPresented = true }) {
-                ScorerView(title: item.title)
+                ScorerView(name: item.name)
             }
             .sheet(isPresented: self.$isPresented) {
                 SafariView(url: item.url)
@@ -29,7 +29,7 @@ struct Current: View {
 
 private extension QueryDocumentSnapshot {
 
-    var title: String {
+    var name: String {
         data()["title"] as! String
     }
 
