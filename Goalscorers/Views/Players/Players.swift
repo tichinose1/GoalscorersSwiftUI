@@ -10,8 +10,10 @@ import SwiftUI
 
 struct Players: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
-            .navigationBarTitle("Players")
+        NavigationView {
+            Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+                .navigationBarTitle("Players")
+        }
     }
 }
 

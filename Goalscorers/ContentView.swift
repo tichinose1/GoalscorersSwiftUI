@@ -13,39 +13,30 @@ struct ContentView: View {
  
     var body: some View {
         TabView(selection: $selection){
-            NavigationView {
-                Current()
-            }
-            .tabItem {
+            Current().tabItem {
                 VStack {
                     Image(systemName: "house")
                     Text("Current season")
                 }
-            }
-            .tag(0)
+            }.tag(0)
             Maps().tabItem {
                 VStack {
                     Image(systemName: "map")
                     Text("Maps")
                 }
-            }
-            .tag(1)
+            }.tag(1)
             Overall().tabItem {
                 VStack {
                     Image(systemName: "clock")
                     Text("All-time")
                 }
             }.tag(2)
-            NavigationView {
-                Players()
-            }
-            .tabItem {
+            Players().tabItem {
                 VStack {
                     Image(systemName: "person")
                     Text("Players")
                 }
-            }
-            .tag(3)
+            }.tag(3)
         }
         .edgesIgnoringSafeArea(.top)
     }

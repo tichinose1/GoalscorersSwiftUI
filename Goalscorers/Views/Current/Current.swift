@@ -14,15 +14,17 @@ struct Current: View {
     @State private var isPresented = false
 
     var body: some View {
-        List(items) { item in
-            Button(action: { self.isPresented = true }) {
-                ScorerRow(name: item.name)
+        NavigationView {
+            List(items) { item in
+                Button(action: { self.isPresented = true }) {
+                    ScorerRow(name: item.name)
+                }
+                .sheet(isPresented: self.$isPresented) {
+                    SafariView(url: item.url)
+                }
             }
-            .sheet(isPresented: self.$isPresented) {
-                SafariView(url: item.url)
-            }
+            .navigationBarTitle("Current season")
         }
-        .navigationBarTitle("Current season")
         .onAppear { self.onAppear() }
     }
 }
@@ -58,8 +60,6 @@ private extension Current {
 
 struct CurrentSeason_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            Current()
-        }
+        Current()
     }
 }
