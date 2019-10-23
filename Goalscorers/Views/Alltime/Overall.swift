@@ -17,7 +17,7 @@ struct Overall: View {
         NavigationView {
             List(items) { item in
                 Button(action: { self.isPresented = true }) {
-                    AlltimeRow(name: item.name)
+                    AlltimeRow(competitionRef: item.competitionRef)
                 }
                 .sheet(isPresented: self.$isPresented) {
                     SafariView(url: item.url)
@@ -45,8 +45,8 @@ private extension Overall {
 
 private extension QueryDocumentSnapshot {
 
-    var name: String {
-        "hoge"
+    var competitionRef: DocumentReference {
+        data()["competition_ref"] as! DocumentReference
     }
 
     var url: URL {

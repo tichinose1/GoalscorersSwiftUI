@@ -21,7 +21,7 @@
 		77BD368C234F6E3700ECC3DD /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD368B234F6E3700ECC3DD /* Players.swift */; };
 		77C18953235752030028C5B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77C18952235752030028C5B0 /* GoogleService-Info.plist */; };
 		77D3853F235DED8D0040AC5F /* QueryDocumentSnapshot+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3853E235DED8D0040AC5F /* QueryDocumentSnapshot+.swift */; };
-		77D38541235EFB6A0040AC5F /* ScorerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D38540235EFB6A0040AC5F /* ScorerView.swift */; };
+		77D38541235EFB6A0040AC5F /* ScorerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D38540235EFB6A0040AC5F /* ScorerRow.swift */; };
 		77D38543235F4F8E0040AC5F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D38542235F4F8E0040AC5F /* MapView.swift */; };
 		C4A1DE4E76FFE6C3A432F153 /* Pods_Goalscorers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426EAAF84CDC81EA63DCFE53 /* Pods_Goalscorers.framework */; };
 /* End PBXBuildFile section */
@@ -45,7 +45,7 @@
 		77BD368B234F6E3700ECC3DD /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		77C18952235752030028C5B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		77D3853E235DED8D0040AC5F /* QueryDocumentSnapshot+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QueryDocumentSnapshot+.swift"; sourceTree = "<group>"; };
-		77D38540235EFB6A0040AC5F /* ScorerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorerView.swift; sourceTree = "<group>"; };
+		77D38540235EFB6A0040AC5F /* ScorerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorerRow.swift; sourceTree = "<group>"; };
 		77D38542235F4F8E0040AC5F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		FF06B3AA3195428882FB1296 /* Pods-Goalscorers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goalscorers.debug.xcconfig"; path = "Target Support Files/Pods-Goalscorers/Pods-Goalscorers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				77BD3685234F692D00ECC3DD /* Current.swift */,
-				77D38540235EFB6A0040AC5F /* ScorerView.swift */,
+				77D38540235EFB6A0040AC5F /* ScorerRow.swift */,
 			);
 			path = Current;
 			sourceTree = "<group>";
@@ -305,7 +305,7 @@
 				77D38543235F4F8E0040AC5F /* MapView.swift in Sources */,
 				77AD84122350C9D800A043B7 /* SafariView.swift in Sources */,
 				77A1F8E8234E088B0022D081 /* SceneDelegate.swift in Sources */,
-				77D38541235EFB6A0040AC5F /* ScorerView.swift in Sources */,
+				77D38541235EFB6A0040AC5F /* ScorerRow.swift in Sources */,
 				77BD3686234F692D00ECC3DD /* Current.swift in Sources */,
 				77BD368C234F6E3700ECC3DD /* Players.swift in Sources */,
 				77BD368A234F6D7A00ECC3DD /* Overall.swift in Sources */,

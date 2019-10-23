@@ -16,7 +16,7 @@ struct Current: View {
     var body: some View {
         List(items) { item in
             Button(action: { self.isPresented = true }) {
-                ScorerView(name: item.name)
+                ScorerRow(name: item.name)
             }
             .sheet(isPresented: self.$isPresented) {
                 SafariView(url: item.url)

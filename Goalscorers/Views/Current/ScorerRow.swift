@@ -1,5 +1,5 @@
 //
-//  ScorerView.swift
+//  ScorerRow.swift
 //  Goalscorers
 //
 //  Created by tichinose1 on 2019/10/22.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ScorerView: View {
+struct ScorerRow: View {
     var name: String
 
     var body: some View {
@@ -18,6 +18,6 @@ struct ScorerView: View {
 
 struct ScorerView_Previews: PreviewProvider {
     static var previews: some View {
-        ScorerView(name: "a")
+        ScorerRow(name: "a")
     }
 }
