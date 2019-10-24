@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import UIKit
 import SafariServices
 
 struct SafariView: UIViewControllerRepresentable {
