@@ -27,6 +27,8 @@ struct MapView: UIViewRepresentable {
 private extension MapView {
 
     func updateAnnotations(from mapView: MKMapView) {
+        mapView.centerCoordinate = CLLocationCoordinate2D(latitude: 47.381389, longitude: 8.574444)
+
         mapView.removeAnnotations(mapView.annotations)
         let newAnnotations = associations.map(AssociationAnnotation.init)
         mapView.addAnnotations(newAnnotations)
