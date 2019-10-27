@@ -9,15 +9,15 @@
 import SwiftUI
 
 struct PlayerRow: View {
-    var name: String
+    var item: Player
 
     var body: some View {
-        Text(name)
+        Text(item.name)
     }
 }
 
 struct PlayerRow_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerRow(name: "a")
+        PlayerRow(item: Player(id: "a", data: ["name": "Lionel Messi"]))
     }
 }
