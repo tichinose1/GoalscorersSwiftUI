@@ -1,5 +1,5 @@
 //
-//  Scorer.swift
+//  Competition.swift
 //  Goalscorers
 //
 //  Created by tichinose1 on 2019/10/27.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-struct Scorer: Identifiable {
-    var id: String
+struct Competition {
     var data: [String: Any]
 }

@@ -13,11 +13,26 @@ struct ScorerRow: View {
 
     var body: some View {
         Text(item.name)
+            .onAppear(perform: self.onAppear)
+    }
+}
+
+extension ScorerRow {
+
+    func onAppear() {
+        item.getCompetition { result in
+            switch result {
+            case .failure:
+                break
+            case .success:
+                break
+            }
+        }
     }
 }
 
 struct ScorerView_Previews: PreviewProvider {
     static var previews: some View {
-        ScorerRow(item: Scorer(id: "a", name: "a", url: URL(string: "a")!))
+        ScorerRow(item: Scorer(id: "a", data: ["title": "hoge"]))
     }
 }

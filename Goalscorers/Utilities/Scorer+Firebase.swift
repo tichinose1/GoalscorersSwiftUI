@@ -28,14 +28,36 @@ extension Scorer {
                     result = .failure(.unknown)
                     return
                 }
-                let scorers = snapshot.documents.map(Scorer.init)
+                let scorers = snapshot.documents.map { Scorer(id: $0.documentID, data: $0.data()) }
                 result = .success(scorers)
         }
     }
 
-    init(snapshot: QueryDocumentSnapshot) {
-        id = snapshot.documentID
-        name = snapshot.data()["title"] as! String
-        url = URL(string: snapshot.data()["url"] as! String)!
+    var name: String {
+        data["title"] as! String
+    }
+
+    var url: URL {
+        URL(string: data["url"] as! String)!
+    }
+
+    func getCompetition(completion: @escaping (Result<Competition, GoalscorersError>) -> Void) {
+        let competitionRef = data["competition_ref"] as! DocumentReference
+        competitionRef.getDocument { snapshot, error in
+            var result: Result<Competition, GoalscorersError>
+            defer {
+                completion(result)
+            }
+            if let error = error {
+                result = .failure(.database(origin: error))
+                return
+            }
+            guard let snapshot = snapshot else {
+                result = .failure(.unknown)
+                return
+            }
+            let competition = Competition(data: snapshot.data()!)
+            result = .success(competition)
+        }
     }
 }
