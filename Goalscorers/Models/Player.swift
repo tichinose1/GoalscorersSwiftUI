@@ -6,8 +6,6 @@
 //  Copyright © 2019 tichinose1. All rights reserved.
 //
 
-import Foundation
-
 struct Player: Identifiable {
     var id: String
     var data: [String: Any]
