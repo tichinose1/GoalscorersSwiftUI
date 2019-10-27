@@ -10,7 +10,7 @@ import Firebase
 
 extension Scorer {
 
-    class func getScorers(completion: @escaping (Result<[Scorer], GoalscorersError>) -> Void) {
+    static func getScorers(completion: @escaping (Result<[Scorer], GoalscorersError>) -> Void) {
         Firestore
             .firestore()
             .collection("scorers")
@@ -33,9 +33,7 @@ extension Scorer {
         }
     }
 
-    convenience init(snapshot: QueryDocumentSnapshot) {
-        self.init(id: "", name: "", url: URL(string: "temp")!)
-
+    init(snapshot: QueryDocumentSnapshot) {
         id = snapshot.documentID
         name = snapshot.data()["title"] as! String
         url = URL(string: snapshot.data()["url"] as! String)!
