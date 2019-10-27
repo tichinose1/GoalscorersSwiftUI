@@ -10,7 +10,7 @@ import Firebase
 
 extension Scorer {
 
-    static func getScorers(completion: @escaping (Result<[Scorer], GoalscorersError>) -> Void) {
+    static func getLatestScorers(completion: @escaping (Result<[Scorer], GoalscorersError>) -> Void) {
         Firestore
             .firestore()
             .collection("scorers")
