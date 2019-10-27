@@ -7,17 +7,16 @@
 //
 
 import SwiftUI
-import Firebase
 
 struct Current: View {
-    @State private var items: [QueryDocumentSnapshot] = []
+    @State private var items: [Scorer] = []
     @State private var isPresented = false
 
     var body: some View {
         NavigationView {
             List(items) { item in
                 Button(action: { self.isPresented = true }) {
-                    ScorerRow(name: item.name)
+                    ScorerRow(item: item)
                 }
                 .sheet(isPresented: self.$isPresented) {
                     SafariView(url: item.url)
@@ -29,31 +28,16 @@ struct Current: View {
     }
 }
 
-private extension QueryDocumentSnapshot {
-
-    var name: String {
-        data()["title"] as! String
-    }
-
-    var url: URL {
-        URL(string: data()["url"] as! String)!
-    }
-}
-
 private extension Current {
 
     func onAppear() {
-        Firestore
-            .firestore()
-            .collection("scorers")
-            .whereField("season", isGreaterThan: "2018")
-            .addSnapshotListener { snapshot, error in
-                if let error = error {
-                    print(error)
-                    return
-                }
-                guard let snapshot = snapshot else { return }
-                self.items = snapshot.documents
+        Scorer.getScorers { result in
+            switch result {
+            case .failure:
+                break
+            case .success(let scorers):
+                self.items = scorers
+            }
         }
     }
 }
