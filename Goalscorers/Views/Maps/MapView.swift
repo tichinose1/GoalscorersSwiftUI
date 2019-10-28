@@ -8,12 +8,11 @@
 
 import SwiftUI
 import MapKit
-import Firebase
 
 struct MapView: UIViewRepresentable {
     typealias UIViewType = MKMapView
 
-    @Binding var associations: [QueryDocumentSnapshot]
+    @Binding var associations: [Association]
 
     func makeUIView(context: Context) -> MKMapView {
         MKMapView()

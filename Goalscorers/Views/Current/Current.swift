@@ -1,5 +1,5 @@
 //
-//  CurrentSeason.swift
+//  Current.swift
 //  Goalscorers
 //
 //  Created by tichinose1 on 2019/10/10.
@@ -42,7 +42,7 @@ private extension Current {
     }
 }
 
-struct CurrentSeason_Previews: PreviewProvider {
+struct Current_Previews: PreviewProvider {
     static var previews: some View {
         Current()
     }

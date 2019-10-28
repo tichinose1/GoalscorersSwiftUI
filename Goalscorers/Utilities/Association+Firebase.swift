@@ -6,6 +6,7 @@
 //  Copyright © 2019 tichinose1. All rights reserved.
 //
 
+import CoreLocation
 import Firebase
 
 extension Association {
@@ -27,5 +28,20 @@ extension Association {
             let items = snapshot.documents.map { Association(data: $0.data()) }
             result = .success(items)
         }
+    }
+
+    var coordinate: CLLocationCoordinate2D {
+        (data["coordinate"] as! GeoPoint).cordinate
+    }
+
+    var name: String {
+        data["name"] as! String
+    }
+}
+
+private extension GeoPoint {
+
+    var cordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 }

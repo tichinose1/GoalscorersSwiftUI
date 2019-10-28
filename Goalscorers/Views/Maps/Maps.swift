@@ -7,10 +7,9 @@
 //
 
 import SwiftUI
-import Firebase
 
 struct Maps: View {
-    @State private var items: [QueryDocumentSnapshot] = []
+    @State private var items: [Association] = []
 
     var body: some View {
         MapView(associations: $items)
@@ -22,13 +21,13 @@ struct Maps: View {
 private extension Maps {
 
     func onAppear() {
-        Firestore.firestore().collection("associations").addSnapshotListener { snapshot, error in
-            if let error = error {
-                print("error: \(error)")
-                return
+        Association.fetchAll { result in
+            switch result {
+            case .failure:
+                break
+            case .success(let items):
+                self.items = items
             }
-            guard let snapshot = snapshot else { return }
-            self.items = snapshot.documents
         }
     }
 }
