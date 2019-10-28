@@ -1,5 +1,5 @@
 //
-//  Overall.swift
+//  Alltime.swift
 //  Goalscorers
 //
 //  Created by tichinose1 on 2019/10/10.
@@ -9,7 +9,7 @@
 import SwiftUI
 import Firebase
 
-struct Overall: View {
+struct Alltime: View {
     @State private var items: [QueryDocumentSnapshot] = []
     @State private var isPresented: Bool = false
 
@@ -29,7 +29,7 @@ struct Overall: View {
     }
 }
 
-private extension Overall {
+private extension Alltime {
 
     func onAppear() {
         Firestore.firestore().collection("overall_scorers").addSnapshotListener { snapshot, error in
@@ -54,8 +54,8 @@ private extension QueryDocumentSnapshot {
     }
 }
 
-struct Overall_Previews: PreviewProvider {
+struct Alltime_Previews: PreviewProvider {
     static var previews: some View {
-        Overall()
+        Alltime()
     }
 }

@@ -19,7 +19,7 @@
 		77AD84122350C9D800A043B7 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AD84112350C9D800A043B7 /* SafariView.swift */; };
 		77BD3686234F692D00ECC3DD /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD3685234F692D00ECC3DD /* Current.swift */; };
 		77BD3688234F6C1700ECC3DD /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD3687234F6C1700ECC3DD /* Maps.swift */; };
-		77BD368A234F6D7A00ECC3DD /* Overall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD3689234F6D7A00ECC3DD /* Overall.swift */; };
+		77BD368A234F6D7A00ECC3DD /* Alltime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD3689234F6D7A00ECC3DD /* Alltime.swift */; };
 		77BD368C234F6E3700ECC3DD /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD368B234F6E3700ECC3DD /* Players.swift */; };
 		77C18953235752030028C5B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77C18952235752030028C5B0 /* GoogleService-Info.plist */; };
 		77D3853F235DED8D0040AC5F /* QueryDocumentSnapshot+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3853E235DED8D0040AC5F /* QueryDocumentSnapshot+.swift */; };
@@ -51,7 +51,7 @@
 		77AD84112350C9D800A043B7 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		77BD3685234F692D00ECC3DD /* Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Current.swift; sourceTree = "<group>"; };
 		77BD3687234F6C1700ECC3DD /* Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
-		77BD3689234F6D7A00ECC3DD /* Overall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overall.swift; sourceTree = "<group>"; };
+		77BD3689234F6D7A00ECC3DD /* Alltime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alltime.swift; sourceTree = "<group>"; };
 		77BD368B234F6E3700ECC3DD /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		77C18952235752030028C5B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		77D3853E235DED8D0040AC5F /* QueryDocumentSnapshot+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QueryDocumentSnapshot+.swift"; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		7782C12123608A4F0071B617 /* Alltime */ = {
 			isa = PBXGroup;
 			children = (
-				77BD3689234F6D7A00ECC3DD /* Overall.swift */,
+				77BD3689234F6D7A00ECC3DD /* Alltime.swift */,
 				7733B78C23608C75007BEC73 /* AlltimeRow.swift */,
 			);
 			path = Alltime;
@@ -336,7 +336,7 @@
 				77E59E5C2365C16B00B6A649 /* Scorer+Firebase.swift in Sources */,
 				77BD3686234F692D00ECC3DD /* Current.swift in Sources */,
 				77BD368C234F6E3700ECC3DD /* Players.swift in Sources */,
-				77BD368A234F6D7A00ECC3DD /* Overall.swift in Sources */,
+				77BD368A234F6D7A00ECC3DD /* Alltime.swift in Sources */,
 				77A1F8EA234E088B0022D081 /* ContentView.swift in Sources */,
 				77E59E642365D4CE00B6A649 /* Player+Firebase.swift in Sources */,
 				77E59E5E2365C5E500B6A649 /* Competition.swift in Sources */,
