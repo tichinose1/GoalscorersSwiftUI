@@ -31,7 +31,7 @@ struct Current: View {
 private extension Current {
 
     func onAppear() {
-        Scorer.getLatestScorers { result in
+        Scorer.fetchLatest { result in
             switch result {
             case .failure:
                 break

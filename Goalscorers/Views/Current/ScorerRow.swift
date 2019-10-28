@@ -20,7 +20,7 @@ struct ScorerRow: View {
 extension ScorerRow {
 
     func onAppear() {
-        item.getCompetition { result in
+        item.fetchCompetition { result in
             switch result {
             case .failure:
                 break

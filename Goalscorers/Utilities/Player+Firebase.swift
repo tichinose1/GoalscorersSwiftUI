@@ -10,7 +10,7 @@ import Firebase
 
 extension Player {
 
-    static func getAllPlayers(completion: @escaping (Result<[Player], GoalscorersError>) -> Void) {
+    static func fetchAll(completion: @escaping (Result<[Player], GoalscorersError>) -> Void) {
         Firestore.firestore().collection("players").addSnapshotListener { snapshot, error in
             var result: Result<[Player], GoalscorersError>
             defer {

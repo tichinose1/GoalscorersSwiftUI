@@ -31,7 +31,7 @@ struct Players: View {
 private extension Players {
 
     func onAppear() {
-        Player.getAllPlayers { result in
+        Player.fetchAll { result in
             switch result {
             case .failure:
                 break

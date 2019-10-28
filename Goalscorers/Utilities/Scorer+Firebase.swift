@@ -10,7 +10,7 @@ import Firebase
 
 extension Scorer {
 
-    static func getLatestScorers(completion: @escaping (Result<[Scorer], GoalscorersError>) -> Void) {
+    static func fetchLatest(completion: @escaping (Result<[Scorer], GoalscorersError>) -> Void) {
         Firestore
             .firestore()
             .collection("scorers")
@@ -41,7 +41,7 @@ extension Scorer {
         URL(string: data["url"] as! String)!
     }
 
-    func getCompetition(completion: @escaping (Result<Competition, GoalscorersError>) -> Void) {
+    func fetchCompetition(completion: @escaping (Result<Competition, GoalscorersError>) -> Void) {
         let competitionRef = data["competition_ref"] as! DocumentReference
         competitionRef.getDocument { snapshot, error in
             var result: Result<Competition, GoalscorersError>
