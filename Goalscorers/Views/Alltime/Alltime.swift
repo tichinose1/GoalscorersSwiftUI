@@ -7,17 +7,16 @@
 //
 
 import SwiftUI
-import Firebase
 
 struct Alltime: View {
-    @State private var items: [QueryDocumentSnapshot] = []
+    @State private var items: [OverallGoalscorers] = []
     @State private var isPresented: Bool = false
 
     var body: some View {
         NavigationView {
             List(items) { item in
                 Button(action: { self.isPresented = true }) {
-                    AlltimeRow(competitionRef: item.competitionRef)
+                    AlltimeRow(item: item)
                 }
                 .sheet(isPresented: self.$isPresented) {
                     SafariView(url: item.url)
@@ -32,25 +31,14 @@ struct Alltime: View {
 private extension Alltime {
 
     func onAppear() {
-        Firestore.firestore().collection("overall_scorers").addSnapshotListener { snapshot, error in
-            if let error = error {
-                print(error)
-                return
+        OverallGoalscorers.fetchAll { result in
+            switch result {
+            case .failure:
+                break
+            case .success(let items):
+                self.items = items
             }
-            guard let snapshot = snapshot else { return }
-            self.items = snapshot.documents
         }
-    }
-}
-
-private extension QueryDocumentSnapshot {
-
-    var competitionRef: DocumentReference {
-        data()["competition_ref"] as! DocumentReference
-    }
-
-    var url: URL {
-        URL(string: data()["url"] as! String)!
     }
 }
 

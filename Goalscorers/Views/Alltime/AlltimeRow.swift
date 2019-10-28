@@ -7,10 +7,9 @@
 //
 
 import SwiftUI
-import Firebase
 
 struct AlltimeRow: View {
-    var competitionRef: DocumentReference!
+    var item: OverallGoalscorers
 
     @State private var name: String = ""
 
@@ -23,26 +22,19 @@ struct AlltimeRow: View {
 private extension AlltimeRow {
 
     func onAppear() {
-        competitionRef.getDocument { snapshot, error in
-            if let error = error {
-                print(error)
-                return
+        item.fetchCompetition { result in
+            switch result {
+            case .failure:
+                break
+            case .success(let item):
+                self.name = item.name
             }
-            guard let snapshot = snapshot else { return }
-            self.name = snapshot.name
         }
-    }
-}
-
-private extension DocumentSnapshot {
-
-    var name: String {
-        data()!["name"] as! String
     }
 }
 
 struct AlltimeRow_Previews: PreviewProvider {
     static var previews: some View {
-        AlltimeRow()
+        AlltimeRow(item: OverallGoalscorers(id: "a", data: ["name": "hoge"]))
     }
 }
