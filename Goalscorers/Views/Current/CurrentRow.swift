@@ -1,5 +1,5 @@
 //
-//  ScorerRow.swift
+//  CurrentRow.swift
 //  Goalscorers
 //
 //  Created by tichinose1 on 2019/10/22.
@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-struct ScorerRow: View {
-    var item: Scorer
+struct CurrentRow: View {
+    var item: Goalscorers
 
     var body: some View {
         Text(item.name)
@@ -17,7 +17,7 @@ struct ScorerRow: View {
     }
 }
 
-extension ScorerRow {
+extension CurrentRow {
 
     func onAppear() {
         item.fetchCompetition { result in
@@ -33,6 +33,6 @@ extension ScorerRow {
 
 struct ScorerView_Previews: PreviewProvider {
     static var previews: some View {
-        ScorerRow(item: Scorer(id: "a", data: ["title": "hoge"]))
+        CurrentRow(item: Goalscorers(id: "a", data: ["title": "hoge"]))
     }
 }

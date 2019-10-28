@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct Current: View {
-    @State private var items: [Scorer] = []
+    @State private var items: [Goalscorers] = []
     @State private var isPresented = false
 
     var body: some View {
         NavigationView {
             List(items) { item in
                 Button(action: { self.isPresented = true }) {
-                    ScorerRow(item: item)
+                    CurrentRow(item: item)
                 }
                 .sheet(isPresented: self.$isPresented) {
                     SafariView(url: item.url)
@@ -31,12 +31,12 @@ struct Current: View {
 private extension Current {
 
     func onAppear() {
-        Scorer.fetchLatest { result in
+        Goalscorers.fetchLatest { result in
             switch result {
             case .failure:
                 break
-            case .success(let scorers):
-                self.items = scorers
+            case .success(let items):
+                self.items = items
             }
         }
     }

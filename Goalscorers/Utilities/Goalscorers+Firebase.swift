@@ -1,5 +1,5 @@
 //
-//  Scorer+Firebase.swift
+//  Goalscorers+Firebase.swift
 //  Goalscorers
 //
 //  Created by tichinose1 on 2019/10/27.
@@ -8,15 +8,15 @@
 
 import Firebase
 
-extension Scorer {
+extension Goalscorers {
 
-    static func fetchLatest(completion: @escaping (Result<[Scorer], GoalscorersError>) -> Void) {
+    static func fetchLatest(completion: @escaping (Result<[Goalscorers], GoalscorersError>) -> Void) {
         Firestore
             .firestore()
             .collection("scorers")
             .whereField("season", isGreaterThan: "2018")
             .addSnapshotListener { snapshot, error in
-                var result: Result<[Scorer], GoalscorersError>
+                var result: Result<[Goalscorers], GoalscorersError>
                 defer {
                     completion(result)
                 }
@@ -28,8 +28,8 @@ extension Scorer {
                     result = .failure(.unknown)
                     return
                 }
-                let scorers = snapshot.documents.map { Scorer(id: $0.documentID, data: $0.data()) }
-                result = .success(scorers)
+                let items = snapshot.documents.map { Goalscorers(id: $0.documentID, data: $0.data()) }
+                result = .success(items)
         }
     }
 
