@@ -10,11 +10,20 @@ import SwiftUI
 
 struct Maps: View {
     @State private var items: [Association] = []
+    @State private var selection: Int? = nil
 
     var body: some View {
-        MapView(associations: $items)
-            .edgesIgnoringSafeArea(.vertical)
-            .onAppear(perform: self.onAppear)
+        NavigationView {
+            NavigationLink(destination: Text("hoge"), tag: 1, selection: $selection) {
+                MapView(associations: $items)
+                    .edgesIgnoringSafeArea(.vertical)
+                    .onAppear(perform: self.onAppear)
+            }
+        }
+        .onAppear {
+            Thread.sleep(forTimeInterval: 2)
+            self.selection = 1
+        }
     }
 }
 
