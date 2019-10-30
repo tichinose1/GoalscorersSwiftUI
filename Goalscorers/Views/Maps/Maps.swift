@@ -17,13 +17,10 @@ struct Maps: View {
             NavigationLink(destination: Text("hoge"), tag: 1, selection: $selection) {
                 MapView(associations: $items)
                     .edgesIgnoringSafeArea(.vertical)
-                    .onAppear(perform: self.onAppear)
+
             }
         }
-        .onAppear {
-            Thread.sleep(forTimeInterval: 2)
-            self.selection = 1
-        }
+        .onAppear(perform: self.onAppear)
     }
 }
 

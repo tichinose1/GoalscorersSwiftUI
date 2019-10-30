@@ -15,19 +15,36 @@ struct MapView: UIViewRepresentable {
     @Binding var associations: [Association]
 
     func makeUIView(context: Context) -> MKMapView {
-        MKMapView()
+        let mapView = MKMapView()
+        mapView.delegate = context.coordinator
+        mapView.centerCoordinate = CLLocationCoordinate2D(latitude: 47.381389, longitude: 8.574444)
+        return mapView
     }
 
     func updateUIView(_ uiView: MKMapView, context: Context) {
         updateAnnotations(from: uiView)
+    }
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+
+    final class Coordinator: NSObject, MKMapViewDelegate {
+        var control: MapView
+
+        init(_ control: MapView) {
+            self.control = control
+        }
+
+        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+            print("hoge")
+        }
     }
 }
 
 private extension MapView {
 
     func updateAnnotations(from mapView: MKMapView) {
-        mapView.centerCoordinate = CLLocationCoordinate2D(latitude: 47.381389, longitude: 8.574444)
-
         mapView.removeAnnotations(mapView.annotations)
         let newAnnotations = associations.map(AssociationAnnotation.init)
         mapView.addAnnotations(newAnnotations)
