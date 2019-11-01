@@ -16,7 +16,9 @@ struct Current: View {
         NavigationView {
             List(items) { item in
                 Button(action: { self.isPresented = true }) {
-                    CurrentRow(item: item)
+                    NavigationLink(destination: Text("destination"), isActive: .constant(false)) {
+                        CurrentRow(item: item)
+                    }
                 }
                 .sheet(isPresented: self.$isPresented) {
                     SafariView(url: item.url)
