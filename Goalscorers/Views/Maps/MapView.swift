@@ -36,8 +36,20 @@ struct MapView: UIViewRepresentable {
             self.control = control
         }
 
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            guard let annotation = annotation as? AssociationAnnotation else { fatalError() }
+            let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier, for: annotation)
+            annotationView.canShowCallout = true
+            annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            return annotationView
+        }
+
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-            print("hoge")
+            print("didSelect")
+        }
+
+        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+            print("calloutAccessoryControlTapped")
         }
     }
 }

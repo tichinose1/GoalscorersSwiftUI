@@ -10,14 +10,11 @@ import SwiftUI
 
 struct Maps: View {
     @State private var items: [Association] = []
-    @State private var selection: Int? = nil
 
     var body: some View {
         NavigationView {
-            NavigationLink(destination: Text("hoge"), tag: 1, selection: .constant(nil)) {
-                MapView(associations: $items)
-                    .edgesIgnoringSafeArea(.vertical)
-            }
+            MapView(associations: $items)
+                .edgesIgnoringSafeArea(.vertical)
         }
         .onAppear(perform: self.onAppear)
     }
