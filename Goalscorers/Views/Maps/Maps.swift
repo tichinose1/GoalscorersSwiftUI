@@ -14,10 +14,9 @@ struct Maps: View {
 
     var body: some View {
         NavigationView {
-            NavigationLink(destination: Text("hoge"), tag: 1, selection: $selection) {
+            NavigationLink(destination: Text("hoge"), tag: 1, selection: .constant(nil)) {
                 MapView(associations: $items)
                     .edgesIgnoringSafeArea(.vertical)
-
             }
         }
         .onAppear(perform: self.onAppear)
