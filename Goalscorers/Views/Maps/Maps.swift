@@ -9,12 +9,18 @@
 import SwiftUI
 
 struct Maps: View {
+    @EnvironmentObject private var store: Store
     @State private var items: [Association] = []
 
     var body: some View {
         NavigationView {
-            MapView(associations: $items)
-                .edgesIgnoringSafeArea(.vertical)
+            ZStack {
+                NavigationLink(destination: Competitions(), isActive: $store.isAssociationSelected) {
+                    EmptyView()
+                }
+                MapView(associations: $items)
+                    .edgesIgnoringSafeArea(.vertical)
+            }
         }
         .onAppear(perform: self.onAppear)
     }

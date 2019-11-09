@@ -12,6 +12,7 @@ import MapKit
 struct MapView: UIViewRepresentable {
     typealias UIViewType = MKMapView
 
+    @EnvironmentObject var store: Store
     @Binding var associations: [Association]
 
     func makeUIView(context: Context) -> MKMapView {
@@ -50,6 +51,10 @@ struct MapView: UIViewRepresentable {
 
         func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
             print("calloutAccessoryControlTapped")
+            guard let annotation = view.annotation as? AssociationAnnotation else { return }
+            guard let title = annotation.title else { return }
+
+            self.control.store.selectAssociation(title: title)
         }
     }
 }
