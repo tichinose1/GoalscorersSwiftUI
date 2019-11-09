@@ -7,5 +7,6 @@
 //
 
 struct Association {
+    var id: String
     var data: [String: Any]
 }

@@ -25,7 +25,7 @@ extension Association {
                 result = .failure(.unknown)
                 return
             }
-            let items = snapshot.documents.map { Association(data: $0.data()) }
+            let items = snapshot.documents.map { Association(id: $0.documentID, data: $0.data()) }
             result = .success(items)
         }
     }

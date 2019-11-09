@@ -52,9 +52,8 @@ struct MapView: UIViewRepresentable {
         func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
             print("calloutAccessoryControlTapped")
             guard let annotation = view.annotation as? AssociationAnnotation else { return }
-            guard let title = annotation.title else { return }
 
-            self.control.store.selectAssociation(title: title)
+            self.control.store.selectAssociation(id: annotation.associationID)
         }
     }
 }

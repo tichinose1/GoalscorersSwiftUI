@@ -9,8 +9,11 @@
 import MapKit
 
 final class AssociationAnnotation: MKPointAnnotation {
+    let associationID: String
 
     init(association: Association) {
+        self.associationID = association.id
+
         super.init()
 
         self.coordinate = association.coordinate

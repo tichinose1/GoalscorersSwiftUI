@@ -11,13 +11,13 @@ import Foundation
 final class Store: ObservableObject {
     @Published var isAssociationSelected: Bool = false
 
-    var selectedAssociationTitle: String? = nil {
+    var selectedAssociationID: String? = nil {
         didSet {
-            isAssociationSelected = (selectedAssociationTitle != nil)
+            isAssociationSelected = (selectedAssociationID != nil)
         }
     }
 
-    func selectAssociation(title: String) {
-        selectedAssociationTitle = title
+    func selectAssociation(id: String) {
+        selectedAssociationID = id
     }
 }
