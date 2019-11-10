@@ -17,7 +17,7 @@ final class Store: ObservableObject {
         }
     }
 
-    func selectAssociation(id: String) {
+    func selectAssociation(id: String?) {
         selectedAssociationID = id
     }
 }

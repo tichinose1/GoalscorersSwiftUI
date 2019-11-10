@@ -23,6 +23,7 @@ struct Maps: View {
             }
         }
         .onAppear(perform: self.onAppear)
+        .onDisappear { self.store.selectAssociation(id: nil) }
     }
 }
 
