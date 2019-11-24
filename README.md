@@ -1,5 +1,46 @@
 # GoalscorersSwiftUI
 
+T.B.D.
+
+## 初期セットアップ
+
+```sh
+bundle
+bundle exec pod install
+```
+
+## ライブラリ更新
+
+```sh
+bundle update
+bundle exec pod update
+./Pods/LicensePlist/license-plist --output-path Cetti/Settings.bundle
+```
+
+## 静的コード分析実行
+
+```sh
+./Pods/SwiftLint/swiftlint
+```
+
+## テスト実行（未実装
+
+```sh
+bundle exec fastlane test
+```
+
+## ベータ配布（未実装
+
+```sh
+bundle exec fastlane beta
+```
+
+## 配布（未実装
+
+```sh
+bundle exec fastlane release
+```
+
 ## Firebase
 
 - ModelにFirebaseの依存を閉じ込めて、ViewはFirebaseに依存しないようにする
