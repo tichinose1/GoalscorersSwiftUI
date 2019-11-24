@@ -1,7 +1,9 @@
 Goalscorers/GoogleService-Info.plist
 Pods/
 
-### https://raw.github.com/github/gitignore/baf13553d070d1d85d6c873235eb529077c35aaf/Global/Xcode.gitignore
+gibo 2.2.3 by Simon Whitaker <sw@netcetera.org>
+https://github.com/simonwhitaker/gibo
+### https://raw.github.com/github/gitignore/db0ef78b5ad1d3caf4cab3240467562360885613/Global/Xcode.gitignore
 
 # Xcode
 #
@@ -31,7 +33,7 @@ DerivedData/
 /*.gcno
 
 
-### https://raw.github.com/github/gitignore/baf13553d070d1d85d6c873235eb529077c35aaf/Swift.gitignore
+### https://raw.github.com/github/gitignore/db0ef78b5ad1d3caf4cab3240467562360885613/Swift.gitignore
 
 # Xcode
 #
