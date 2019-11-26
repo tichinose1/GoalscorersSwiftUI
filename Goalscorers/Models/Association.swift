@@ -6,15 +6,18 @@
 //  Copyright © 2019 tichinose1. All rights reserved.
 //
 
+import Firebase
+
 struct Association: Decodable {
+    var region_code: String
     var name: String
+    var coordinate: GeoPoint
     var order: Int
-    var regsion_code: String
 }
 
 extension Association: Identifiable {
 
     var id: String {
-        return regsion_code
+        return region_code
     }
 }

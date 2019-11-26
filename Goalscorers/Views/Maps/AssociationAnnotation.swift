@@ -16,7 +16,7 @@ final class AssociationAnnotation: MKPointAnnotation {
 
         super.init()
 
-        self.coordinate = association.coordinate
+        self.coordinate = CLLocationCoordinate2D(latitude: association.coordinate.latitude, longitude: association.coordinate.longitude)
         self.title = association.name
     }
 }

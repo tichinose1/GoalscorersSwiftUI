@@ -26,15 +26,12 @@ extension Association {
                 result = .failure(.unknown)
                 return
             }
-            let items = snapshot.documents.map { Association(id: $0.documentID, data: $0.data()) }
-            result = .success(items)
+            do {
+                let items = try snapshot.documents.map { try $0.data(as: Association.self)! }
+                result = .success(items)
+            } catch {
+                result = .failure(.unknown)
+            }
         }
-    }
-}
-
-private extension GeoPoint {
-
-    var cordinate: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 }
