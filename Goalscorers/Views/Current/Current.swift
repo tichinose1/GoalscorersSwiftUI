@@ -16,7 +16,7 @@ struct Current: View {
         NavigationView {
             List(items) { item in
                 Button(action: { self.isSafariViewPresented = true }) {
-                    Text(item.title)
+                    CurrentRow(item: item)
                 }
                 .sheet(isPresented: self.$isSafariViewPresented) {
                     SafariView(url: item.url)
