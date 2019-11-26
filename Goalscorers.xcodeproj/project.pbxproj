@@ -177,11 +177,11 @@
 			children = (
 				77E59E592365BCEF00B6A649 /* GoalscorersError.swift */,
 				77E59E5D2365C5E500B6A649 /* Competition.swift */,
-				779EF4BB2367395100C3F2C4 /* Association.swift */,
 				779C80C82376F60F00260A7D /* Store.swift */,
 				775E50F1238CF3E500D5FA9A /* Scorer.swift */,
 				7798BE31238D716E00AD6D17 /* OverallScorer.swift */,
 				77E59E612365D4A700B6A649 /* Player.swift */,
+				779EF4BB2367395100C3F2C4 /* Association.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,10 +202,10 @@
 			isa = PBXGroup;
 			children = (
 				779EF4B9236736FD00C3F2C4 /* Competition+Firebase.swift */,
-				779EF4BD2367397100C3F2C4 /* Association+Firebase.swift */,
 				775E50F3238CF64C00D5FA9A /* Scorer+Firebase.swift */,
 				7798BE33238D71E300AD6D17 /* OverallScorer+Firebase.swift */,
 				77E59E632365D4CE00B6A649 /* Player+Firebase.swift */,
+				779EF4BD2367397100C3F2C4 /* Association+Firebase.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";

@@ -8,6 +8,7 @@
 
 import CoreLocation
 import Firebase
+import FirebaseFirestoreSwift
 
 extension Association {
 
@@ -28,14 +29,6 @@ extension Association {
             let items = snapshot.documents.map { Association(id: $0.documentID, data: $0.data()) }
             result = .success(items)
         }
-    }
-
-    var coordinate: CLLocationCoordinate2D {
-        (data["coordinate"] as! GeoPoint).cordinate
-    }
-
-    var name: String {
-        data["name"] as! String
     }
 }
 

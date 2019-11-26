@@ -6,7 +6,15 @@
 //  Copyright © 2019 tichinose1. All rights reserved.
 //
 
-struct Association {
-    var id: String
-    var data: [String: Any]
+struct Association: Decodable {
+    var name: String
+    var order: Int
+    var regsion_code: String
+}
+
+extension Association: Identifiable {
+
+    var id: String {
+        return regsion_code
+    }
 }
