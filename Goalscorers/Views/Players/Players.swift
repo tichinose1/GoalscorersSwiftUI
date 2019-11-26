@@ -16,7 +16,7 @@ struct Players: View {
         NavigationView {
             List(items) { item in
                 Button(action: { self.isPresented = true }) {
-                    PlayerRow(item: item)
+                    Text(item.name)
                 }
                 .sheet(isPresented: self.$isPresented) {
                     SafariView(url: item.url)
@@ -24,7 +24,9 @@ struct Players: View {
             }
             .navigationBarTitle("Players")
         }
-        .onAppear(perform: self.onAppear)
+        .onAppear {
+            self.onAppear()
+        }
     }
 }
 

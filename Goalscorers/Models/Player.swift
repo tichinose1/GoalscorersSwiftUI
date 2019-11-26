@@ -6,7 +6,17 @@
 //  Copyright © 2019 tichinose1. All rights reserved.
 //
 
-struct Player: Identifiable {
-    var id: String
-    var data: [String: Any]
+import Foundation
+
+struct Player: Decodable {
+    var url: URL
+    var name: String
+    var order: Int
+}
+
+extension Player: Identifiable {
+
+    var id: String {
+        return url.absoluteString
+    }
 }

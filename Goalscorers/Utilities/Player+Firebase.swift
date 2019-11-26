@@ -24,16 +24,12 @@ extension Player {
                 result = .failure(.unknown)
                 return
             }
-            let players = snapshot.documents.map { Player(id: $0.documentID, data: $0.data()) }
-            result = .success(players)
+            do {
+                let items = try snapshot.documents.map { try $0.data(as: Player.self)! }
+                result = .success(items)
+            } catch {
+                result = .failure(.unknown)
+            }
         }
-    }
-
-    var name: String {
-        data["name"] as! String
-    }
-
-    var url: URL {
-        URL(string: data["url"] as! String)!
     }
 }
