@@ -10,12 +10,12 @@ import SwiftUI
 
 struct CurrentRow: View {
     var item: Scorer
-    @State private var competition: Competition?
+    @State private var association: Association?
 
     var body: some View {
-        VStack {
+        HStack {
+            Text(association?.regionCode ?? "")
             Text(item.title)
-            Text(competition?.name ?? "")
         }
         .onAppear {
             self.onAppear()
@@ -31,7 +31,14 @@ private extension CurrentRow {
             case .failure:
                 break
             case .success(let item):
-                self.competition = item
+                item.fetchAssociation { result in
+                    switch result {
+                    case .failure:
+                        break
+                    case .success(let item):
+                        self.association = item
+                    }
+                }
             }
         }
     }

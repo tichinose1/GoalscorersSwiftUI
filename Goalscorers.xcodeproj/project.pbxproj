@@ -14,7 +14,6 @@
 		7798BE38238D851300AD6D17 /* CurrentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798BE37238D851300AD6D17 /* CurrentRow.swift */; };
 		779C80C92376F60F00260A7D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C80C82376F60F00260A7D /* Store.swift */; };
 		779C80CB2376F6B000260A7D /* Competitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C80CA2376F6B000260A7D /* Competitions.swift */; };
-		779EF4BA236736FD00C3F2C4 /* Competition+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779EF4B9236736FD00C3F2C4 /* Competition+Firebase.swift */; };
 		779EF4BC2367395100C3F2C4 /* Association.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779EF4BB2367395100C3F2C4 /* Association.swift */; };
 		779EF4BE2367397200C3F2C4 /* Association+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779EF4BD2367397100C3F2C4 /* Association+Firebase.swift */; };
 		77A1F8E6234E088B0022D081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A1F8E5234E088B0022D081 /* AppDelegate.swift */; };
@@ -48,7 +47,6 @@
 		7798BE37238D851300AD6D17 /* CurrentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentRow.swift; sourceTree = "<group>"; };
 		779C80C82376F60F00260A7D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		779C80CA2376F6B000260A7D /* Competitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competitions.swift; sourceTree = "<group>"; };
-		779EF4B9236736FD00C3F2C4 /* Competition+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Competition+Firebase.swift"; sourceTree = "<group>"; };
 		779EF4BB2367395100C3F2C4 /* Association.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Association.swift; sourceTree = "<group>"; };
 		779EF4BD2367397100C3F2C4 /* Association+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Association+Firebase.swift"; sourceTree = "<group>"; };
 		77A1F8E2234E088B0022D081 /* Goalscorers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goalscorers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,11 +177,11 @@
 			isa = PBXGroup;
 			children = (
 				77E59E592365BCEF00B6A649 /* GoalscorersError.swift */,
-				77E59E5D2365C5E500B6A649 /* Competition.swift */,
 				779C80C82376F60F00260A7D /* Store.swift */,
 				775E50F1238CF3E500D5FA9A /* Scorer.swift */,
 				7798BE31238D716E00AD6D17 /* OverallScorer.swift */,
 				77E59E612365D4A700B6A649 /* Player.swift */,
+				77E59E5D2365C5E500B6A649 /* Competition.swift */,
 				779EF4BB2367395100C3F2C4 /* Association.swift */,
 			);
 			path = Models;
@@ -204,7 +202,6 @@
 		77D3853D235DED6A0040AC5F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				779EF4B9236736FD00C3F2C4 /* Competition+Firebase.swift */,
 				7798BE33238D71E300AD6D17 /* OverallScorer+Firebase.swift */,
 				77E59E632365D4CE00B6A649 /* Player+Firebase.swift */,
 				779EF4BD2367397100C3F2C4 /* Association+Firebase.swift */,
@@ -352,7 +349,6 @@
 				77BD3686234F692D00ECC3DD /* Current.swift in Sources */,
 				77BD368C234F6E3700ECC3DD /* Players.swift in Sources */,
 				77BD368A234F6D7A00ECC3DD /* Alltime.swift in Sources */,
-				779EF4BA236736FD00C3F2C4 /* Competition+Firebase.swift in Sources */,
 				77A1F8EA234E088B0022D081 /* ContentView.swift in Sources */,
 				77E59E642365D4CE00B6A649 /* Player+Firebase.swift in Sources */,
 				77E59E5E2365C5E500B6A649 /* Competition.swift in Sources */,

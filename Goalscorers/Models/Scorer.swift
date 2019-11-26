@@ -76,8 +76,12 @@ extension Scorer {
                 result = .failure(.unknown)
                 return
             }
-            let competition = Competition(data: snapshot.data()!)
-            result = .success(competition)
+            do {
+                let item = try snapshot.data(as: Competition.self)!
+                result = .success(item)
+            } catch {
+                result = .failure(.unknown)
+            }
         }
     }
 }
