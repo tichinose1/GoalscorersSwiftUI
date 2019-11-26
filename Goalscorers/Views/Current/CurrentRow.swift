@@ -10,9 +10,30 @@ import SwiftUI
 
 struct CurrentRow: View {
     var item: Scorer
+    @State private var competition: Competition?
 
     var body: some View {
-        Text(item.title)
+        VStack {
+            Text(item.title)
+            Text(competition?.name ?? "")
+        }
+        .onAppear {
+            self.onAppear()
+        }
+    }
+}
+
+private extension CurrentRow {
+
+    func onAppear() {
+        item.fetchCompetition { result in
+            switch result {
+            case .failure:
+                break
+            case .success(let item):
+                self.competition = item
+            }
+        }
     }
 }
 

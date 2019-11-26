@@ -61,6 +61,25 @@ extension Scorer {
                 }
         }
     }
+
+    func fetchCompetition(completion: @escaping (Result<Competition, GoalscorersError>) -> Void) {
+        competitionRef.getDocument { snapshot, error in
+            var result: Result<Competition, GoalscorersError>
+            defer {
+                completion(result)
+            }
+            if let error = error {
+                result = .failure(.database(origin: error))
+                return
+            }
+            guard let snapshot = snapshot else {
+                result = .failure(.unknown)
+                return
+            }
+            let competition = Competition(data: snapshot.data()!)
+            result = .success(competition)
+        }
+    }
 }
 
 extension Scorer {
