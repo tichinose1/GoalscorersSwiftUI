@@ -32,9 +32,7 @@
 		77BD368C234F6E3700ECC3DD /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD368B234F6E3700ECC3DD /* Players.swift */; };
 		77C18953235752030028C5B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77C18952235752030028C5B0 /* GoogleService-Info.plist */; };
 		77D38543235F4F8E0040AC5F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D38542235F4F8E0040AC5F /* MapView.swift */; };
-		77E59E582365BC7F00B6A649 /* Goalscorers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E59E572365BC7F00B6A649 /* Goalscorers.swift */; };
 		77E59E5A2365BCEF00B6A649 /* GoalscorersError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E59E592365BCEF00B6A649 /* GoalscorersError.swift */; };
-		77E59E5C2365C16B00B6A649 /* Goalscorers+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E59E5B2365C16B00B6A649 /* Goalscorers+Firebase.swift */; };
 		77E59E5E2365C5E500B6A649 /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E59E5D2365C5E500B6A649 /* Competition.swift */; };
 		77E59E622365D4A700B6A649 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E59E612365D4A700B6A649 /* Player.swift */; };
 		77E59E642365D4CE00B6A649 /* Player+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E59E632365D4CE00B6A649 /* Player+Firebase.swift */; };
@@ -71,9 +69,7 @@
 		77BD368B234F6E3700ECC3DD /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		77C18952235752030028C5B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		77D38542235F4F8E0040AC5F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		77E59E572365BC7F00B6A649 /* Goalscorers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goalscorers.swift; sourceTree = "<group>"; };
 		77E59E592365BCEF00B6A649 /* GoalscorersError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalscorersError.swift; sourceTree = "<group>"; };
-		77E59E5B2365C16B00B6A649 /* Goalscorers+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goalscorers+Firebase.swift"; sourceTree = "<group>"; };
 		77E59E5D2365C5E500B6A649 /* Competition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competition.swift; sourceTree = "<group>"; };
 		77E59E612365D4A700B6A649 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		77E59E632365D4CE00B6A649 /* Player+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Firebase.swift"; sourceTree = "<group>"; };
@@ -185,7 +181,6 @@
 		77AD840E2350C38F00A043B7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				77E59E572365BC7F00B6A649 /* Goalscorers.swift */,
 				77E59E592365BCEF00B6A649 /* GoalscorersError.swift */,
 				77E59E5D2365C5E500B6A649 /* Competition.swift */,
 				77E59E612365D4A700B6A649 /* Player.swift */,
@@ -212,7 +207,6 @@
 		77D3853D235DED6A0040AC5F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				77E59E5B2365C16B00B6A649 /* Goalscorers+Firebase.swift */,
 				77E59E632365D4CE00B6A649 /* Player+Firebase.swift */,
 				779EF4B7236734D700C3F2C4 /* OverallGoalscorers+Firebase.swift */,
 				779EF4B9236736FD00C3F2C4 /* Competition+Firebase.swift */,
@@ -353,8 +347,6 @@
 				77AD84122350C9D800A043B7 /* SafariView.swift in Sources */,
 				779C80C92376F60F00260A7D /* Store.swift in Sources */,
 				77A1F8E8234E088B0022D081 /* SceneDelegate.swift in Sources */,
-				77E59E582365BC7F00B6A649 /* Goalscorers.swift in Sources */,
-				77E59E5C2365C16B00B6A649 /* Goalscorers+Firebase.swift in Sources */,
 				775E50F2238CF3E500D5FA9A /* Scorer.swift in Sources */,
 				779EF4BC2367395100C3F2C4 /* Association.swift in Sources */,
 				779EF4B8236734D700C3F2C4 /* OverallGoalscorers+Firebase.swift in Sources */,

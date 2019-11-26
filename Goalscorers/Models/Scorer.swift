@@ -21,3 +21,12 @@ extension Scorer: Identifiable {
         return url.absoluteString
     }
 }
+
+extension Scorer {
+
+    static var samples: [Scorer] {
+        return [
+            Scorer(url: URL(string: "example")!, title: "a", season: "2019", order: 0)
+        ]
+    }
+}
