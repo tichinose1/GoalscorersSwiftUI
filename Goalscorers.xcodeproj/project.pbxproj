@@ -11,6 +11,7 @@
 		775E50F4238CF64C00D5FA9A /* Scorer+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E50F3238CF64C00D5FA9A /* Scorer+Firebase.swift */; };
 		7798BE32238D716E00AD6D17 /* OverallScorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798BE31238D716E00AD6D17 /* OverallScorer.swift */; };
 		7798BE34238D71E300AD6D17 /* OverallScorer+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798BE33238D71E300AD6D17 /* OverallScorer+Firebase.swift */; };
+		7798BE36238D7CB300AD6D17 /* DocumentSnapshot+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798BE35238D7CB300AD6D17 /* DocumentSnapshot+.swift */; };
 		779C80C92376F60F00260A7D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C80C82376F60F00260A7D /* Store.swift */; };
 		779C80CB2376F6B000260A7D /* Competitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C80CA2376F6B000260A7D /* Competitions.swift */; };
 		779EF4BA236736FD00C3F2C4 /* Competition+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779EF4B9236736FD00C3F2C4 /* Competition+Firebase.swift */; };
@@ -44,6 +45,7 @@
 		775E50F3238CF64C00D5FA9A /* Scorer+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scorer+Firebase.swift"; sourceTree = "<group>"; };
 		7798BE31238D716E00AD6D17 /* OverallScorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallScorer.swift; sourceTree = "<group>"; };
 		7798BE33238D71E300AD6D17 /* OverallScorer+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverallScorer+Firebase.swift"; sourceTree = "<group>"; };
+		7798BE35238D7CB300AD6D17 /* DocumentSnapshot+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentSnapshot+.swift"; sourceTree = "<group>"; };
 		779C80C82376F60F00260A7D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		779C80CA2376F6B000260A7D /* Competitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competitions.swift; sourceTree = "<group>"; };
 		779EF4B9236736FD00C3F2C4 /* Competition+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Competition+Firebase.swift"; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				7798BE33238D71E300AD6D17 /* OverallScorer+Firebase.swift */,
 				77E59E632365D4CE00B6A649 /* Player+Firebase.swift */,
 				779EF4BD2367397100C3F2C4 /* Association+Firebase.swift */,
+				7798BE35238D7CB300AD6D17 /* DocumentSnapshot+.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				77A1F8E6234E088B0022D081 /* AppDelegate.swift in Sources */,
 				77D38543235F4F8E0040AC5F /* MapView.swift in Sources */,
 				77AD84122350C9D800A043B7 /* SafariView.swift in Sources */,
+				7798BE36238D7CB300AD6D17 /* DocumentSnapshot+.swift in Sources */,
 				779C80C92376F60F00260A7D /* Store.swift in Sources */,
 				7798BE34238D71E300AD6D17 /* OverallScorer+Firebase.swift in Sources */,
 				77A1F8E8234E088B0022D081 /* SceneDelegate.swift in Sources */,
