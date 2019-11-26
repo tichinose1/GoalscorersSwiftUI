@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7733B78D23608C75007BEC73 /* AlltimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7733B78C23608C75007BEC73 /* AlltimeRow.swift */; };
 		7733B78F236093F2007BEC73 /* PlayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7733B78E236093F2007BEC73 /* PlayerRow.swift */; };
 		775E50F2238CF3E500D5FA9A /* Scorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E50F1238CF3E500D5FA9A /* Scorer.swift */; };
 		775E50F4238CF64C00D5FA9A /* Scorer+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E50F3238CF64C00D5FA9A /* Scorer+Firebase.swift */; };
+		7798BE32238D716E00AD6D17 /* OverallScorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798BE31238D716E00AD6D17 /* OverallScorer.swift */; };
+		7798BE34238D71E300AD6D17 /* OverallScorer+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798BE33238D71E300AD6D17 /* OverallScorer+Firebase.swift */; };
 		779C80C92376F60F00260A7D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C80C82376F60F00260A7D /* Store.swift */; };
 		779C80CB2376F6B000260A7D /* Competitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C80CA2376F6B000260A7D /* Competitions.swift */; };
 		779EF4B62367349700C3F2C4 /* OverallGoalscorers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779EF4B52367349700C3F2C4 /* OverallGoalscorers.swift */; };
-		779EF4B8236734D700C3F2C4 /* OverallGoalscorers+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779EF4B7236734D700C3F2C4 /* OverallGoalscorers+Firebase.swift */; };
 		779EF4BA236736FD00C3F2C4 /* Competition+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779EF4B9236736FD00C3F2C4 /* Competition+Firebase.swift */; };
 		779EF4BC2367395100C3F2C4 /* Association.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779EF4BB2367395100C3F2C4 /* Association.swift */; };
 		779EF4BE2367397200C3F2C4 /* Association+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779EF4BD2367397100C3F2C4 /* Association+Firebase.swift */; };
@@ -42,14 +42,14 @@
 /* Begin PBXFileReference section */
 		426EAAF84CDC81EA63DCFE53 /* Pods_Goalscorers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Goalscorers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		692EB31DBB874F0AC8C9EF7D /* Pods-Goalscorers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goalscorers.release.xcconfig"; path = "Target Support Files/Pods-Goalscorers/Pods-Goalscorers.release.xcconfig"; sourceTree = "<group>"; };
-		7733B78C23608C75007BEC73 /* AlltimeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlltimeRow.swift; sourceTree = "<group>"; };
 		7733B78E236093F2007BEC73 /* PlayerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRow.swift; sourceTree = "<group>"; };
 		775E50F1238CF3E500D5FA9A /* Scorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scorer.swift; sourceTree = "<group>"; };
 		775E50F3238CF64C00D5FA9A /* Scorer+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scorer+Firebase.swift"; sourceTree = "<group>"; };
+		7798BE31238D716E00AD6D17 /* OverallScorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallScorer.swift; sourceTree = "<group>"; };
+		7798BE33238D71E300AD6D17 /* OverallScorer+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverallScorer+Firebase.swift"; sourceTree = "<group>"; };
 		779C80C82376F60F00260A7D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		779C80CA2376F6B000260A7D /* Competitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competitions.swift; sourceTree = "<group>"; };
 		779EF4B52367349700C3F2C4 /* OverallGoalscorers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallGoalscorers.swift; sourceTree = "<group>"; };
-		779EF4B7236734D700C3F2C4 /* OverallGoalscorers+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverallGoalscorers+Firebase.swift"; sourceTree = "<group>"; };
 		779EF4B9236736FD00C3F2C4 /* Competition+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Competition+Firebase.swift"; sourceTree = "<group>"; };
 		779EF4BB2367395100C3F2C4 /* Association.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Association.swift; sourceTree = "<group>"; };
 		779EF4BD2367397100C3F2C4 /* Association+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Association+Firebase.swift"; sourceTree = "<group>"; };
@@ -120,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				77BD3689234F6D7A00ECC3DD /* Alltime.swift */,
-				7733B78C23608C75007BEC73 /* AlltimeRow.swift */,
 			);
 			path = Alltime;
 			sourceTree = "<group>";
@@ -188,6 +187,7 @@
 				779EF4BB2367395100C3F2C4 /* Association.swift */,
 				779C80C82376F60F00260A7D /* Store.swift */,
 				775E50F1238CF3E500D5FA9A /* Scorer.swift */,
+				7798BE31238D716E00AD6D17 /* OverallScorer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -208,10 +208,10 @@
 			isa = PBXGroup;
 			children = (
 				77E59E632365D4CE00B6A649 /* Player+Firebase.swift */,
-				779EF4B7236734D700C3F2C4 /* OverallGoalscorers+Firebase.swift */,
 				779EF4B9236736FD00C3F2C4 /* Competition+Firebase.swift */,
 				779EF4BD2367397100C3F2C4 /* Association+Firebase.swift */,
 				775E50F3238CF64C00D5FA9A /* Scorer+Firebase.swift */,
+				7798BE33238D71E300AD6D17 /* OverallScorer+Firebase.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -346,10 +346,10 @@
 				77D38543235F4F8E0040AC5F /* MapView.swift in Sources */,
 				77AD84122350C9D800A043B7 /* SafariView.swift in Sources */,
 				779C80C92376F60F00260A7D /* Store.swift in Sources */,
+				7798BE34238D71E300AD6D17 /* OverallScorer+Firebase.swift in Sources */,
 				77A1F8E8234E088B0022D081 /* SceneDelegate.swift in Sources */,
 				775E50F2238CF3E500D5FA9A /* Scorer.swift in Sources */,
 				779EF4BC2367395100C3F2C4 /* Association.swift in Sources */,
-				779EF4B8236734D700C3F2C4 /* OverallGoalscorers+Firebase.swift in Sources */,
 				779EF4BE2367397200C3F2C4 /* Association+Firebase.swift in Sources */,
 				77BD3686234F692D00ECC3DD /* Current.swift in Sources */,
 				77BD368C234F6E3700ECC3DD /* Players.swift in Sources */,
@@ -361,10 +361,10 @@
 				77BD3688234F6C1700ECC3DD /* Maps.swift in Sources */,
 				779C80CB2376F6B000260A7D /* Competitions.swift in Sources */,
 				77E59E622365D4A700B6A649 /* Player.swift in Sources */,
-				7733B78D23608C75007BEC73 /* AlltimeRow.swift in Sources */,
 				779EF4B62367349700C3F2C4 /* OverallGoalscorers.swift in Sources */,
 				775E50F4238CF64C00D5FA9A /* Scorer+Firebase.swift in Sources */,
 				77E59E5A2365BCEF00B6A649 /* GoalscorersError.swift in Sources */,
+				7798BE32238D716E00AD6D17 /* OverallScorer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct Alltime: View {
-    @State private var items: [OverallGoalscorers] = []
+    @State private var items: [OverallScorer] = []
     @State private var isPresented: Bool = false
 
     var body: some View {
         NavigationView {
             List(items) { item in
                 Button(action: { self.isPresented = true }) {
-                    AlltimeRow(item: item)
+                    Text(item.id)
                 }
                 .sheet(isPresented: self.$isPresented) {
                     SafariView(url: item.url)
@@ -24,14 +24,16 @@ struct Alltime: View {
             }
             .navigationBarTitle("All-time top scorers")
         }
-        .onAppear(perform: self.onAppear)
+        .onAppear {
+            self.onAppear()
+        }
     }
 }
 
 private extension Alltime {
 
     func onAppear() {
-        OverallGoalscorers.fetchAll { result in
+        OverallScorer.fetchAll { result in
             switch result {
             case .failure:
                 break
