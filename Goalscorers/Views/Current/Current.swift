@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct Current: View {
-    @State private var items: [Scorer] = []
+    @State var items: [Scorer]
     @State private var isSafariViewPresented = false
 
     var body: some View {
@@ -46,6 +46,6 @@ private extension Current {
 
 struct Current_Previews: PreviewProvider {
     static var previews: some View {
-        Current()
+        Current(items: Scorer.samples)
     }
 }
