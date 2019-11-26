@@ -9,15 +9,22 @@
 import Firebase
 
 struct Association: Decodable {
-    var region_code: String
+    var regionCode: String
     var name: String
     var coordinate: GeoPoint
     var order: Int
+
+    private enum CodingKeys: String, CodingKey {
+        case regionCode = "region_code"
+        case name
+        case coordinate
+        case order
+    }
 }
 
 extension Association: Identifiable {
 
     var id: String {
-        return region_code
+        return regionCode
     }
 }
