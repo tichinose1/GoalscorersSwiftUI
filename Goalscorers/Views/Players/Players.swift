@@ -10,15 +10,15 @@ import SwiftUI
 
 struct Players: View {
     @State private var items: [Player] = []
-    @State private var isPresented: Bool = false
+    @State private var isSafariViewPresented: Bool = false
 
     var body: some View {
         NavigationView {
             List(items) { item in
-                Button(action: { self.isPresented = true }) {
+                Button(action: { self.isSafariViewPresented = true }) {
                     Text(item.name)
                 }
-                .sheet(isPresented: self.$isPresented) {
+                .sheet(isPresented: self.$isSafariViewPresented) {
                     SafariView(url: item.url)
                 }
             }
