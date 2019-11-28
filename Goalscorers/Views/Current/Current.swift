@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct Current: View {
+    // Previewで値をセットするためにpublicプロパティで未初期化にする
     @State var items: [Scorer]
     @State private var isSafariViewPresented = false
 

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CurrentRow: View {
     var item: Scorer
+    // 取得できない場合もあるので普通のOptionalにする
     @State private var association: Association?
 
     var body: some View {

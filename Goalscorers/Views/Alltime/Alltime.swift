@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct Alltime: View {
-    @State private var items: [OverallScorer] = []
+    @State var items: [OverallScorer]
     @State private var isSafariViewPresented: Bool = false
 
     var body: some View {
         NavigationView {
             List(items) { item in
                 Button(action: { self.isSafariViewPresented = true }) {
-                    Text(item.id)
+                    AlltimeRow(item: item)
                 }
                 .sheet(isPresented: self.$isSafariViewPresented) {
                     SafariView(url: item.url)
@@ -46,6 +46,6 @@ private extension Alltime {
 
 struct Alltime_Previews: PreviewProvider {
     static var previews: some View {
-        Alltime()
+        Alltime(items: OverallScorer.samples)
     }
 }

@@ -9,13 +9,46 @@
 import SwiftUI
 
 struct AlltimeRow: View {
+    var item: OverallScorer
+    @State private var competition: Competition?
+    @State private var association: Association?
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(association?.regionCode ?? "")
+            Text(competition?.name ?? "")
+        }
+        .onAppear {
+            self.onAppear()
+        }
+    }
+}
+
+private extension AlltimeRow {
+
+    func onAppear() {
+        item.fetchCompetition { result in
+            switch result {
+            case .failure:
+                break
+            case .success(let item):
+                self.competition = item
+                
+                item.fetchAssociation { result in
+                    switch result {
+                    case .failure:
+                        break
+                    case .success(let item):
+                        self.association = item
+                    }
+                }
+            }
+        }
     }
 }
 
 struct AlltimeRow_Previews: PreviewProvider {
     static var previews: some View {
-        AlltimeRow()
+        AlltimeRow(item: OverallScorer.sample)
     }
 }

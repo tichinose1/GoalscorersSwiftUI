@@ -25,7 +25,7 @@ struct ContentView: View {
                     Text("Maps")
                 }
             }.tag(1)
-            Alltime().tabItem {
+            Alltime(items: []).tabItem {
                 VStack {
                     Image(systemName: "clock")
                     Text("All-time")
