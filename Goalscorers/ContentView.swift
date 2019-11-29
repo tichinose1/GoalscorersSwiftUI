@@ -31,7 +31,7 @@ struct ContentView: View {
                     Text("All-time")
                 }
             }.tag(2)
-            Players().tabItem {
+            Players(items: []).tabItem {
                 VStack {
                     Image(systemName: "person")
                     Text("Players")

@@ -15,6 +15,13 @@ struct Player: Decodable {
     var name: String
     var order: Int
     var associationRef: DocumentReference!
+
+    private enum CodingKeys: String, CodingKey {
+        case url
+        case name
+        case order
+        case associationRef = "association_ref"
+    }
 }
 
 extension Player: Identifiable {
@@ -70,5 +77,18 @@ extension Player {
                 result = .failure(.unknown)
             }
         }
+    }
+}
+
+extension Player {
+
+    static var sample: Player {
+        return Player(url: URL(string: "https://en.wikipedia.org/wiki/Cristiano_Ronaldo#Career_statistics")!, name: "Cristiano Ronaldo", order: 0, associationRef: nil)
+    }
+
+    static var samples: [Player] {
+        return [
+            Player(url: URL(string: "https://en.wikipedia.org/wiki/Cristiano_Ronaldo#Career_statistics")!, name: "Cristiano Ronaldo", order: 0, associationRef: nil)
+        ]
     }
 }

@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct Players: View {
-    @State private var items: [Player] = []
+    @State var items: [Player]
     @State private var isSafariViewPresented: Bool = false
 
     var body: some View {
         NavigationView {
             List(items) { item in
                 Button(action: { self.isSafariViewPresented = true }) {
-                    Text(item.name)
+                    PlayerRow(item: item)
                 }
                 .sheet(isPresented: self.$isSafariViewPresented) {
                     SafariView(url: item.url)
@@ -46,6 +46,6 @@ private extension Players {
 
 struct Players_Previews: PreviewProvider {
     static var previews: some View {
-        Players()
+        Players(items: Player.samples)
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		775E50F2238CF3E500D5FA9A /* Scorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E50F1238CF3E500D5FA9A /* Scorer.swift */; };
 		7770D41723900BCE00DD0821 /* AlltimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7770D41623900BCE00DD0821 /* AlltimeRow.swift */; };
+		7779E1D423915BA3000FBCC5 /* PlayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779E1D323915BA3000FBCC5 /* PlayerRow.swift */; };
 		7798BE32238D716E00AD6D17 /* OverallScorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798BE31238D716E00AD6D17 /* OverallScorer.swift */; };
 		7798BE36238D7CB300AD6D17 /* DocumentSnapshot+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798BE35238D7CB300AD6D17 /* DocumentSnapshot+.swift */; };
 		7798BE38238D851300AD6D17 /* CurrentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798BE37238D851300AD6D17 /* CurrentRow.swift */; };
@@ -41,6 +42,7 @@
 		692EB31DBB874F0AC8C9EF7D /* Pods-Goalscorers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goalscorers.release.xcconfig"; path = "Target Support Files/Pods-Goalscorers/Pods-Goalscorers.release.xcconfig"; sourceTree = "<group>"; };
 		775E50F1238CF3E500D5FA9A /* Scorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scorer.swift; sourceTree = "<group>"; };
 		7770D41623900BCE00DD0821 /* AlltimeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlltimeRow.swift; sourceTree = "<group>"; };
+		7779E1D323915BA3000FBCC5 /* PlayerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRow.swift; sourceTree = "<group>"; };
 		7798BE31238D716E00AD6D17 /* OverallScorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallScorer.swift; sourceTree = "<group>"; };
 		7798BE35238D7CB300AD6D17 /* DocumentSnapshot+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentSnapshot+.swift"; sourceTree = "<group>"; };
 		7798BE37238D851300AD6D17 /* CurrentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentRow.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				77BD368B234F6E3700ECC3DD /* Players.swift */,
+				7779E1D323915BA3000FBCC5 /* PlayerRow.swift */,
 			);
 			path = Players;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				77D38543235F4F8E0040AC5F /* MapView.swift in Sources */,
 				77AD84122350C9D800A043B7 /* SafariView.swift in Sources */,
 				7798BE36238D7CB300AD6D17 /* DocumentSnapshot+.swift in Sources */,
+				7779E1D423915BA3000FBCC5 /* PlayerRow.swift in Sources */,
 				779C80C92376F60F00260A7D /* Store.swift in Sources */,
 				7798BE38238D851300AD6D17 /* CurrentRow.swift in Sources */,
 				77A1F8E8234E088B0022D081 /* SceneDelegate.swift in Sources */,
