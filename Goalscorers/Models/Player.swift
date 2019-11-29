@@ -83,12 +83,23 @@ extension Player {
 extension Player {
 
     static var sample: Player {
-        return Player(url: URL(string: "https://en.wikipedia.org/wiki/Cristiano_Ronaldo#Career_statistics")!, name: "Cristiano Ronaldo", order: 0, associationRef: nil)
+        return
+            Player(
+                url: URL(string: "https://en.wikipedia.org/wiki/Cristiano_Ronaldo#Career_statistics")!,
+                name: "Cristiano Ronaldo",
+                order: 0,
+                associationRef: nil
+            )
     }
 
     static var samples: [Player] {
         return [
-            Player(url: URL(string: "https://en.wikipedia.org/wiki/Cristiano_Ronaldo#Career_statistics")!, name: "Cristiano Ronaldo", order: 0, associationRef: nil)
+            Player(
+                url: URL(string: "https://en.wikipedia.org/wiki/Cristiano_Ronaldo#Career_statistics")!,
+                name: "Cristiano Ronaldo",
+                order: 0,
+                associationRef: nil
+            )
         ]
     }
 }

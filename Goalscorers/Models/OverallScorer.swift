@@ -83,12 +83,19 @@ extension OverallScorer {
 extension OverallScorer {
 
     static var sample: OverallScorer {
-        return OverallScorer(url: URL(string: "https://en.wikipedia.org/wiki/List_of_Premier_League_players_with_100_or_more_goals#Players")!, order: 0, competitionRef: nil)
+        return
+            OverallScorer(
+                url: URL(string: "https://en.wikipedia.org/wiki/List_of_Premier_League_players_with_100_or_more_goals#Players")!,
+                order: 0
+            )
     }
 
     static var samples: [OverallScorer] {
         return [
-            OverallScorer(url: URL(string: "https://en.wikipedia.org/wiki/List_of_Premier_League_players_with_100_or_more_goals#Players")!, order: 0, competitionRef: nil)
+            OverallScorer(
+                url: URL(string: "https://en.wikipedia.org/wiki/List_of_Premier_League_players_with_100_or_more_goals#Players")!,
+                order: 0
+            )
         ]
     }
 }

@@ -13,7 +13,7 @@ struct Competition: Decodable {
     var name: String
     var kind: String
     var order: Int
-    var associationRef: DocumentReference
+    var associationRef: DocumentReference!
 
     private enum CodingKeys: String, CodingKey {
         case name
