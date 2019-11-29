@@ -34,49 +34,11 @@ extension Player: Identifiable {
 extension Player {
 
     static func fetchAll(completion: @escaping (Result<[Player], GoalscorersError>) -> Void) {
-        Firestore.firestore().collection("players").addSnapshotListener { snapshot, error in
-            var result: Result<[Player], GoalscorersError>
-            defer {
-                completion(result)
-            }
-            if let error = error {
-                result = .failure(.database(origin: error))
-                return
-            }
-            guard let snapshot = snapshot else {
-                result = .failure(.unknown)
-                return
-            }
-            do {
-                let items = try snapshot.documents.map { try $0.data(as: Player.self)! }
-                result = .success(items)
-            } catch {
-                result = .failure(.unknown)
-            }
-        }
+        Firestore.firestore().collection("players").fetch(completion: completion)
     }
 
     func fetchAssociation(completion: @escaping (Result<Association, GoalscorersError>) -> Void) {
-        associationRef.getDocument { snapshot, error in
-            var result: Result<Association, GoalscorersError>
-            defer {
-                completion(result)
-            }
-            if let error = error {
-                result = .failure(.database(origin: error))
-                return
-            }
-            guard let snapshot = snapshot else {
-                result = .failure(.unknown)
-                return
-            }
-            do {
-                let item = try snapshot.data(as: Association.self)!
-                result = .success(item)
-            } catch {
-                result = .failure(.unknown)
-            }
-        }
+        associationRef.fetch(completion: completion)
     }
 }
 

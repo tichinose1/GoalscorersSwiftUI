@@ -26,25 +26,6 @@ struct Competition: Decodable {
 extension Competition {
 
     func fetchAssociation(completion: @escaping (Result<Association, GoalscorersError>) -> Void) {
-        associationRef.getDocument { snapshot, error in
-            var result: Result<Association, GoalscorersError>
-            defer {
-                completion(result)
-            }
-            if let error = error {
-                result = .failure(.database(origin: error))
-                return
-            }
-            guard let snapshot = snapshot else {
-                result = .failure(.unknown)
-                return
-            }
-            do {
-                let item = try snapshot.data(as: Association.self)!
-                result = .success(item)
-            } catch {
-                result = .failure(.unknown)
-            }
-        }
+        associationRef.fetch(completion: completion)
     }
 }

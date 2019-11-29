@@ -32,51 +32,11 @@ extension OverallScorer: Identifiable {
 extension OverallScorer {
 
     static func fetchAll(completion: @escaping (Result<[OverallScorer], GoalscorersError>) -> Void) {
-        Firestore.firestore().collection("overall_scorers").addSnapshotListener { snapshot, error in
-            // TODO: ジェネリクスで共通化する
-            var result: Result<[OverallScorer], GoalscorersError>
-            defer {
-                completion(result)
-            }
-            if let error = error {
-                result = .failure(.database(origin: error))
-                return
-            }
-            guard let snapshot = snapshot else {
-                result = .failure(.unknown)
-                return
-            }
-            do {
-                let items = try snapshot.documents.map { try $0.data(as: OverallScorer.self)! }
-                result = .success(items)
-            } catch {
-                result = .failure(.unknown)
-            }
-        }
+        Firestore.firestore().collection("overall_scorers").fetch(completion: completion)
     }
 
-    // TODO: extensionで共通化する
     func fetchCompetition(completion: @escaping (Result<Competition, GoalscorersError>) -> Void) {
-        competitionRef.getDocument { snapshot, error in
-            var result: Result<Competition, GoalscorersError>
-            defer {
-                completion(result)
-            }
-            if let error = error {
-                result = .failure(.database(origin: error))
-                return
-            }
-            guard let snapshot = snapshot else {
-                result = .failure(.unknown)
-                return
-            }
-            do {
-                let item = try snapshot.data(as: Competition.self)!
-                result = .success(item)
-            } catch {
-                result = .failure(.unknown)
-            }
-        }
+        competitionRef.fetch(completion: completion)
     }
 }
 

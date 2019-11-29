@@ -36,53 +36,11 @@ extension Scorer: Identifiable {
 extension Scorer {
 
     static func fetchLatest(completion: @escaping (Result<[Scorer], GoalscorersError>) -> Void) {
-        Firestore
-            .firestore()
-            .collection("scorers")
-            .whereField("season", isGreaterThan: "2018")
-            .addSnapshotListener { snapshot, error in
-                var result: Result<[Scorer], GoalscorersError>
-                defer {
-                    completion(result)
-                }
-                if let error = error {
-                    result = .failure(.database(origin: error))
-                    return
-                }
-                guard let snapshot = snapshot else {
-                    result = .failure(.unknown)
-                    return
-                }
-                do {
-                    let items = try snapshot.documents.map { try $0.data(as: Scorer.self)! }
-                    result = .success(items)
-                } catch {
-                    result = .failure(.unknown)
-                }
-        }
+        Firestore.firestore().collection("scorers").whereField("season", isGreaterThan: "2018").fetch(completion: completion)
     }
 
     func fetchCompetition(completion: @escaping (Result<Competition, GoalscorersError>) -> Void) {
-        competitionRef.getDocument { snapshot, error in
-            var result: Result<Competition, GoalscorersError>
-            defer {
-                completion(result)
-            }
-            if let error = error {
-                result = .failure(.database(origin: error))
-                return
-            }
-            guard let snapshot = snapshot else {
-                result = .failure(.unknown)
-                return
-            }
-            do {
-                let item = try snapshot.data(as: Competition.self)!
-                result = .success(item)
-            } catch {
-                result = .failure(.unknown)
-            }
-        }
+        competitionRef.fetch(completion: completion)
     }
 }
 

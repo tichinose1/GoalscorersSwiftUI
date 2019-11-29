@@ -6,7 +6,9 @@
 //  Copyright © 2019 tichinose1. All rights reserved.
 //
 
+import CoreLocation
 import Firebase
+import FirebaseFirestoreSwift
 
 struct Association: Decodable {
     var regionCode: String
@@ -26,5 +28,12 @@ extension Association: Identifiable {
 
     var id: String {
         return regionCode
+    }
+}
+
+extension Association {
+
+    static func fetchAll(completion: @escaping (Result<[Association], GoalscorersError>) -> Void) {
+        Firestore.firestore().collection("associations").fetch(completion: completion)
     }
 }
