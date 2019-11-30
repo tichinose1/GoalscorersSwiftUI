@@ -1,5 +1,5 @@
 //
-//  PlayerRow.swift
+//  PlayersRow.swift
 //  Goalscorers
 //
 //  Created by tichinose1 on 2019/11/29.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct PlayerRow: View {
+struct PlayersRow: View {
     private(set) var item: Player
     @State private var association: Association?
 
@@ -23,7 +23,7 @@ struct PlayerRow: View {
     }
 }
 
-private extension PlayerRow {
+private extension PlayersRow {
 
     func onAppear() {
         item.fetchAssociation { result in
@@ -37,8 +37,8 @@ private extension PlayerRow {
     }
 }
 
-struct PlayerRow_Previews: PreviewProvider {
+struct PlayersRow_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerRow(item: Player.sample)
+        PlayersRow(item: Player.sample)
     }
 }

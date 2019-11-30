@@ -16,7 +16,7 @@ struct Players: View {
         NavigationView {
             List(items) { item in
                 Button(action: { self.isSafariViewPresented = true }) {
-                    PlayerRow(item: item)
+                    PlayersRow(item: item)
                 }
                 .sheet(isPresented: self.$isSafariViewPresented) {
                     SafariView(url: item.url)
