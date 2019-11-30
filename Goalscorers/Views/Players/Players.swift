@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct Players: View {
-    @State var items: [Player]
+    @State var items: [Player] = []
     @State private var isSafariViewPresented: Bool = false
 
     var body: some View {

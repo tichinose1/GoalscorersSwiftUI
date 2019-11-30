@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct Alltime: View {
-    @State var items: [OverallScorer]
+    @State var items: [OverallScorer] = []
     @State private var isSafariViewPresented: Bool = false
 
     var body: some View {

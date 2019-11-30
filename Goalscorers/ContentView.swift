@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView(){
-            Current(items: []).tabItem {
+            Current().tabItem {
                 VStack {
                     Image(systemName: "house")
                     Text("Current season")
@@ -23,13 +23,13 @@ struct ContentView: View {
                     Text("Maps")
                 }
             }
-            Alltime(items: []).tabItem {
+            Alltime().tabItem {
                 VStack {
                     Image(systemName: "clock")
                     Text("All-time")
                 }
             }
-            Players(items: []).tabItem {
+            Players().tabItem {
                 VStack {
                     Image(systemName: "person")
                     Text("Players")

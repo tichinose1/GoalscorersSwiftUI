@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Maps: View {
     @EnvironmentObject private var store: Store
-    @State private var items: [Association] = []
+    @State var items: [Association] = []
 
     var body: some View {
         NavigationView {
