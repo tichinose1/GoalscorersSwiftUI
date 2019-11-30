@@ -13,6 +13,6 @@ struct Doc<T: Decodable> {
 
 extension Doc: Identifiable {
     var id: String {
-        return documentID
+        documentID
     }
 }

@@ -27,7 +27,7 @@ struct Association: Decodable {
 extension Association: Identifiable {
 
     var id: String {
-        return regionCode
+        regionCode
     }
 }
 
