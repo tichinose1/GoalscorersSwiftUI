@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Current: View {
     // Previewで値を渡せるようにpublicプロパティにする
-    @State var items: [Scorer] = []
+    @State private(set) var items: [Scorer] = []
     @State private var isSafariViewPresented = false
 
     var body: some View {

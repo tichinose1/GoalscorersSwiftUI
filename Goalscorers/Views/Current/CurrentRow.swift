@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CurrentRow: View {
-    var item: Scorer
+    private(set) var item: Scorer
     // 取得できない場合もあるので普通のOptionalにする
     @State private var association: Association?
 

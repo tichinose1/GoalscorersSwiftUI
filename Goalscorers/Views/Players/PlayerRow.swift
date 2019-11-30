@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PlayerRow: View {
-    var item: Player
+    private(set) var item: Player
     @State private var association: Association?
 
     var body: some View {

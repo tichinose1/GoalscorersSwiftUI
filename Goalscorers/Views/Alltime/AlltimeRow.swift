@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AlltimeRow: View {
-    var item: OverallScorer
+    private(set) var item: OverallScorer
     @State private var competition: Competition?
     @State private var association: Association?
 
