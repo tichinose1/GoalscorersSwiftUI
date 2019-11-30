@@ -14,7 +14,7 @@ struct Player: Decodable {
     var url: URL
     var name: String
     var order: Int
-    var associationRef: DocumentReference!
+    var associationRef: DocumentReference?
 
     private enum CodingKeys: String, CodingKey {
         case url
@@ -38,7 +38,7 @@ extension Player {
     }
 
     func fetchAssociation(completion: @escaping (Result<Association, GoalscorersError>) -> Void) {
-        associationRef.fetch(completion: completion)
+        associationRef?.fetch(completion: completion)
     }
 }
 

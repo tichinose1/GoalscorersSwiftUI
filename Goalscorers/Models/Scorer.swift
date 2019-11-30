@@ -15,7 +15,8 @@ struct Scorer: Decodable {
     var title: String
     var season: String
     var order: Int
-    var competitionRef: DocumentReference!
+    // TODO: 初期化出来ないのでOptionalにする
+    var competitionRef: DocumentReference?
 
     private enum CodingKeys: String, CodingKey {
         case url
@@ -40,7 +41,7 @@ extension Scorer {
     }
 
     func fetchCompetition(completion: @escaping (Result<Competition, GoalscorersError>) -> Void) {
-        competitionRef.fetch(completion: completion)
+        competitionRef?.fetch(completion: completion)
     }
 }
 

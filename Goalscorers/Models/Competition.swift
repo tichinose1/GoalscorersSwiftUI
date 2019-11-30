@@ -13,7 +13,7 @@ struct Competition: Decodable {
     var name: String
     var kind: String
     var order: Int
-    var associationRef: DocumentReference!
+    var associationRef: DocumentReference?
 
     private enum CodingKeys: String, CodingKey {
         case name
@@ -26,6 +26,6 @@ struct Competition: Decodable {
 extension Competition {
 
     func fetchAssociation(completion: @escaping (Result<Association, GoalscorersError>) -> Void) {
-        associationRef.fetch(completion: completion)
+        associationRef?.fetch(completion: completion)
     }
 }

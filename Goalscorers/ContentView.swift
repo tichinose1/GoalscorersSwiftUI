@@ -9,34 +9,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection = 0
- 
     var body: some View {
-        TabView(selection: $selection){
+        TabView(){
             Current(items: []).tabItem {
                 VStack {
                     Image(systemName: "house")
                     Text("Current season")
                 }
-            }.tag(0)
+            }
             Maps().tabItem {
                 VStack {
                     Image(systemName: "map")
                     Text("Maps")
                 }
-            }.tag(1)
+            }
             Alltime(items: []).tabItem {
                 VStack {
                     Image(systemName: "clock")
                     Text("All-time")
                 }
-            }.tag(2)
+            }
             Players(items: []).tabItem {
                 VStack {
                     Image(systemName: "person")
                     Text("Players")
                 }
-            }.tag(3)
+            }
         }
         .edgesIgnoringSafeArea(.top)
     }

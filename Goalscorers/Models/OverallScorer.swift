@@ -13,7 +13,7 @@ import FirebaseFirestoreSwift
 struct OverallScorer: Decodable {
     var url: URL
     var order: Int
-    var competitionRef: DocumentReference!
+    var competitionRef: DocumentReference?
 
     private enum CodingKeys: String, CodingKey {
         case url
@@ -36,7 +36,7 @@ extension OverallScorer {
     }
 
     func fetchCompetition(completion: @escaping (Result<Competition, GoalscorersError>) -> Void) {
-        competitionRef.fetch(completion: completion)
+        competitionRef?.fetch(completion: completion)
     }
 }
 
