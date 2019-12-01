@@ -23,9 +23,39 @@ struct Competition: Decodable {
     }
 }
 
+extension Competition: Identifiable {
+
+    var id: String {
+        name
+    }
+}
+
 extension Competition {
 
     func fetchAssociation(completion: @escaping (Result<Association, GoalscorersError>) -> Void) {
         associationRef?.fetch(completion: completion)
+    }
+}
+
+extension Competition {
+
+    static var sample: Competition {
+        Competition(
+            name: "Ligue 1",
+            kind: "club",
+            order: 0,
+            associationRef: nil
+        )
+    }
+
+    static var samples: [Competition] {
+        return [
+            Competition(
+                name: "Ligue 1",
+                kind: "club",
+                order: 0,
+                associationRef: nil
+            )
+        ]
     }
 }

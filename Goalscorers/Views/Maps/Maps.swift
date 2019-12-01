@@ -11,11 +11,17 @@ import SwiftUI
 struct Maps: View {
     @EnvironmentObject private var store: Store
     @State private(set) var items: [Association] = []
+    private var selectedAssociation: Association {
+        items.first {
+            $0.id == store.selectedAssociationID
+        }
+            ?? Association.sample
+    }
 
     var body: some View {
         NavigationView {
             ZStack {
-                NavigationLink(destination: Competitions(), isActive: $store.isAssociationSelected) {
+                NavigationLink(destination: Competitions(association: selectedAssociation), isActive: $store.isAssociationSelected) {
                     EmptyView()
                 }
                 MapView(associations: $items)

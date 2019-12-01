@@ -9,8 +9,33 @@
 import SwiftUI
 
 struct Competitions: View {
+    private(set) var association: Association!
+    @State private(set) var items: [Competition] = []
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(items) { item in
+            NavigationLink(destination: Text(item.name)) {
+                CompetitionsRow(item: item, regionCode: self.association.regionCode)
+            }
+        }
+        .onAppear {
+            self.onAppear()
+        }
+        .navigationBarTitle(association.name)
+    }
+}
+
+private extension Competitions {
+
+    func onAppear() {
+        association.fetchCompetitions { result in
+            switch result {
+            case .failure:
+                break
+            case .success(let items):
+                self.items = items
+            }
+        }
     }
 }
 

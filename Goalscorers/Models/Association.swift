@@ -36,4 +36,31 @@ extension Association {
     static func fetchAll(completion: @escaping (Result<[Association], GoalscorersError>) -> Void) {
         Firestore.firestore().collection("associations").fetch(completion: completion)
     }
+
+    func fetchCompetitions(completion: @escaping (Result<[Competition], GoalscorersError>) -> Void) {
+        Firestore.firestore().collection("competitions").fetch(completion: completion)
+    }
+}
+
+extension Association {
+
+    static var sample: Association {
+        Association(
+            regionCode: "KR",
+            name: "South Korea",
+            coordinate: GeoPoint(latitude: 37.55, longitude: 126.966667),
+            order: 0
+        )
+    }
+
+    static var samples: [Association] {
+        return [
+            Association(
+                regionCode: "KR",
+                name: "South Korea",
+                coordinate: GeoPoint(latitude: 37.55, longitude: 126.966667),
+                order: 0
+            )
+        ]
+    }
 }
