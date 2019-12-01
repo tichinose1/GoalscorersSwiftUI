@@ -14,7 +14,7 @@ struct PlayersRow: View {
 
     var body: some View {
         HStack {
-            Text(association?.regionCode ?? "")
+            Image(association?.regionCode ?? "WW")
             Text(item.name)
         }
         .onAppear {
