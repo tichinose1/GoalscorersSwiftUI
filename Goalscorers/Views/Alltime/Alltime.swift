@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Alltime: View {
     @State private(set) var items: [OverallScorer] = []
-    @State private(set) var isSafariViewPresented: Bool = false
+    @State private(set) var selectedItem: OverallScorer?
 
     var body: some View {
         NavigationView {
@@ -18,9 +18,9 @@ struct Alltime: View {
                 AlltimeRow(item: item)
                     .contentShape(Rectangle())
                     .onTapGesture {
-                        self.isSafariViewPresented = true
+                        self.selectedItem = item
                     }
-                    .sheet(isPresented: self.$isSafariViewPresented) {
+                    .sheet(item: self.$selectedItem) { item in
                         SafariView(url: item.url)
                     }
             }

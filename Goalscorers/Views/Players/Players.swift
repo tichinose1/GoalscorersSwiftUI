@@ -10,17 +10,17 @@ import SwiftUI
 
 struct Players: View {
     @State private(set) var items: [Player] = []
-    @State private(set) var isSafariViewPresented: Bool = false
+    @State private(set) var selectedItem: Player?
 
     var body: some View {
         NavigationView {
             List(items) { item in
                 PlayersRow(item: item)
-                    .contentShape(Rectangle()) // これをいれないとSpacerがタップに反応しない
-                    .onTapGesture { // セルをButtonにするとImageがロード出来ないため、ジェスチャで対応する
-                        self.isSafariViewPresented = true
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        self.selectedItem = item
                     }
-                    .sheet(isPresented: self.$isSafariViewPresented) {
+                    .sheet(item: self.$selectedItem) { item in
                         SafariView(url: item.url)
                     }
             }
@@ -49,7 +49,7 @@ private extension Players {
 struct Players_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            Players(items: Player.samples, isSafariViewPresented: true)
+            Players(items: Player.samples)
         }
     }
 }

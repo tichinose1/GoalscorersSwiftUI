@@ -11,20 +11,21 @@ import SwiftUI
 struct Current: View {
     // Previewでいじれるように基本的にすべてのメンバ変数をprivate(set)にする
     @State private(set) var items: [Scorer] = []
-    @State private(set) var isSafariViewPresented = false
-    @State private(set) var targetURL: URL!
+    @State private(set) var selectedItem: Scorer?
 
     var body: some View {
         NavigationView {
             List(items) { item in
                 CurrentRow(item: item)
+                    // これをいれないとSpacerがタップに反応しない
                     .contentShape(Rectangle())
+                    // セルをButtonにするとImageがロード出来ないため、ジェスチャで対応する
                     .onTapGesture {
-                        self.isSafariViewPresented = true
-                        self.targetURL = item.url // SafariViewがキャッシュされるため？タップ時に（動的に）URLを設定しなおす必要がある
+                        self.selectedItem = item
                     }
-                    .sheet(isPresented: self.$isSafariViewPresented) {
-                        SafariView(url: self.targetURL)
+                    // SafariViewがキャッシュされるため？isPresentedではなくitemの方を使う
+                    .sheet(item: self.$selectedItem) { item in
+                        SafariView(url: item.url)
                     }
             }
             .navigationBarTitle("Current season")
