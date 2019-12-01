@@ -41,6 +41,8 @@ struct MapView: UIViewRepresentable {
             guard let annotation = annotation as? AssociationAnnotation else { fatalError() }
             let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier, for: annotation)
             annotationView.canShowCallout = true
+            let uiImage = UIImage(named: annotation.association.regionCode)!
+            annotationView.leftCalloutAccessoryView = UIImageView(image: uiImage)
             annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             return annotationView
         }
@@ -53,7 +55,7 @@ struct MapView: UIViewRepresentable {
             print("calloutAccessoryControlTapped")
             guard let annotation = view.annotation as? AssociationAnnotation else { return }
 
-            self.control.store.selectAssociation(id: annotation.associationID)
+            self.control.store.selectAssociation(id: annotation.association.id)
         }
     }
 }
