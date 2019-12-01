@@ -10,11 +10,11 @@ import SwiftUI
 
 struct PlayersRow: View {
     private(set) var item: Player
-    @State private var association: Association?
+    @State private var regionCode = "WW"
 
     var body: some View {
         HStack {
-            Image(association?.regionCode ?? "WW")
+            Image(regionCode)
             Text(item.name)
         }
         .onAppear {
@@ -31,7 +31,7 @@ private extension PlayersRow {
             case .failure:
                 break
             case .success(let item):
-                self.association = item
+                self.regionCode = item.regionCode
             }
         }
     }
