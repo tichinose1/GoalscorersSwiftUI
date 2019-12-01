@@ -16,7 +16,8 @@ struct Players: View {
         NavigationView {
             List(items) { item in
                 PlayersRow(item: item)
-                    .onTapGesture {
+                    .contentShape(Rectangle()) // これをいれないとSpacerがタップに反応しない
+                    .onTapGesture { // セルをButtonにするとImageがロード出来ないため、ジェスチャで対応する
                         self.isSafariViewPresented = true
                     }
                     .sheet(isPresented: self.$isSafariViewPresented) {

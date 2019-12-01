@@ -10,13 +10,14 @@ import SwiftUI
 
 struct AlltimeRow: View {
     private(set) var item: OverallScorer
-    @State private var competition: Competition?
-    @State private var association: Association?
+    @State private var competitionName = ""
+    @State private var regionCode = "WW"
 
     var body: some View {
         HStack {
-            Text(association?.regionCode ?? "")
-            Text(competition?.name ?? "")
+            Image(regionCode)
+            Text(competitionName)
+            Spacer()
         }
         .onAppear {
             self.onAppear()
@@ -32,14 +33,14 @@ private extension AlltimeRow {
             case .failure:
                 break
             case .success(let item):
-                self.competition = item
+                self.competitionName = item.name
                 
                 item.fetchAssociation { result in
                     switch result {
                     case .failure:
                         break
                     case .success(let item):
-                        self.association = item
+                        self.regionCode = item.regionCode
                     }
                 }
             }

@@ -16,6 +16,7 @@ struct PlayersRow: View {
         HStack {
             Image(regionCode)
             Text(item.name)
+            Spacer()
         }
         .onAppear {
             self.onAppear()

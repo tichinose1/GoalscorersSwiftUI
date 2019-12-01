@@ -15,12 +15,14 @@ struct Current: View {
     var body: some View {
         NavigationView {
             List(items) { item in
-                Button(action: { self.isSafariViewPresented = true }) {
-                    CurrentRow(item: item)
-                }
-                .sheet(isPresented: self.$isSafariViewPresented) {
-                    SafariView(url: item.url)
-                }
+                CurrentRow(item: item)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        self.isSafariViewPresented = true
+                    }
+                    .sheet(isPresented: self.$isSafariViewPresented) {
+                        SafariView(url: item.url)
+                    }
             }
             .navigationBarTitle("Current season")
         }

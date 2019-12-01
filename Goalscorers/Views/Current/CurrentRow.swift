@@ -10,13 +10,13 @@ import SwiftUI
 
 struct CurrentRow: View {
     private(set) var item: Scorer
-    // 取得できない場合もあるので普通のOptionalにする
-    @State private var association: Association?
+    @State private var regionCode = "WW"
 
     var body: some View {
         HStack {
-            Text(association?.regionCode ?? "")
+            Image(regionCode)
             Text(item.title)
+            Spacer()
         }
         .onAppear {
             self.onAppear()
@@ -37,7 +37,7 @@ private extension CurrentRow {
                     case .failure:
                         break
                     case .success(let item):
-                        self.association = item
+                        self.regionCode = item.regionCode
                     }
                 }
             }

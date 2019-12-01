@@ -15,12 +15,14 @@ struct Alltime: View {
     var body: some View {
         NavigationView {
             List(items) { item in
-                Button(action: { self.isSafariViewPresented = true }) {
-                    AlltimeRow(item: item)
-                }
-                .sheet(isPresented: self.$isSafariViewPresented) {
-                    SafariView(url: item.url)
-                }
+                AlltimeRow(item: item)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        self.isSafariViewPresented = true
+                    }
+                    .sheet(isPresented: self.$isSafariViewPresented) {
+                        SafariView(url: item.url)
+                    }
             }
             .navigationBarTitle("All-time top scorers")
         }
