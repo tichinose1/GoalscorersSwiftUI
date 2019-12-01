@@ -33,17 +33,6 @@ extension Player: Identifiable {
 
 extension Player {
 
-    static func fetchAll(completion: @escaping (Result<[Player], GoalscorersError>) -> Void) {
-        Firestore.firestore().collection("players").fetch(completion: completion)
-    }
-
-    func fetchAssociation(completion: @escaping (Result<Association, GoalscorersError>) -> Void) {
-        associationRef?.fetch(completion: completion)
-    }
-}
-
-extension Player {
-
     static var sample: Player {
         Player(
             url: URL(string: "https://en.wikipedia.org/wiki/Cristiano_Ronaldo#Career_statistics")!,

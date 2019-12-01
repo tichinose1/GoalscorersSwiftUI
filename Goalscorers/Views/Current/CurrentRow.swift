@@ -27,12 +27,12 @@ struct CurrentRow: View {
 private extension CurrentRow {
 
     func onAppear() {
-        item.fetchCompetition { result in
+        item.competitionRef?.fetch { (result: Result<Competition, GoalscorersError>) in
             switch result {
             case .failure:
                 break
             case .success(let item):
-                item.fetchAssociation { result in
+                item.associationRef?.fetch { (result: Result<Association, GoalscorersError>) in
                     switch result {
                     case .failure:
                         break

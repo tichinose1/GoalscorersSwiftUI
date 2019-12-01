@@ -29,14 +29,14 @@ private extension AlltimeRow {
 
     func onAppear() {
         print("item.url: \(item.url)")
-        item.fetchCompetition { result in
+        item.competitionRef?.fetch { (result: Result<Competition, GoalscorersError>) in
             switch result {
             case .failure:
                 break
             case .success(let item):
                 self.competitionName = item.name
                 
-                item.fetchAssociation { result in
+                item.associationRef?.fetch { (result: Result<Association, GoalscorersError>) in
                     switch result {
                     case .failure:
                         break

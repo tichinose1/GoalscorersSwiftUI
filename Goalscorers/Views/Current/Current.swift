@@ -39,7 +39,7 @@ struct Current: View {
 private extension Current {
 
     func onAppear() {
-        Scorer.fetchLatest { result in
+        fetchLatestScorers { result in
             switch result {
             case .failure:
                 break

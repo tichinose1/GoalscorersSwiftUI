@@ -28,7 +28,7 @@ struct Competitions: View {
 private extension Competitions {
 
     func onAppear() {
-        association.fetchCompetitions { result in
+        fetchAllCompetitions { result in
             switch result {
             case .failure:
                 break

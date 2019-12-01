@@ -31,17 +31,6 @@ extension OverallScorer: Identifiable {
 
 extension OverallScorer {
 
-    static func fetchAll(completion: @escaping (Result<[OverallScorer], GoalscorersError>) -> Void) {
-        Firestore.firestore().collection("overall_scorers").fetch(completion: completion)
-    }
-
-    func fetchCompetition(completion: @escaping (Result<Competition, GoalscorersError>) -> Void) {
-        competitionRef?.fetch(completion: completion)
-    }
-}
-
-extension OverallScorer {
-
     static var sample: OverallScorer {
         OverallScorer(
             url: URL(string: "https://en.wikipedia.org/wiki/List_of_Premier_League_players_with_100_or_more_goals#Players")!,

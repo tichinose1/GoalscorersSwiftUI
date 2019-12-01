@@ -36,17 +36,6 @@ extension Scorer: Identifiable {
 
 extension Scorer {
 
-    static func fetchLatest(completion: @escaping (Result<[Scorer], GoalscorersError>) -> Void) {
-        Firestore.firestore().collection("scorers").whereField("season", isGreaterThan: "2018").fetch(completion: completion)
-    }
-
-    func fetchCompetition(completion: @escaping (Result<Competition, GoalscorersError>) -> Void) {
-        competitionRef?.fetch(completion: completion)
-    }
-}
-
-extension Scorer {
-
     static var sample: Scorer {
         Scorer(
             url: URL(string: "https://en.wikipedia.org/wiki/2004_Copa_Am%C3%A9rica#Goal_scorers")!,

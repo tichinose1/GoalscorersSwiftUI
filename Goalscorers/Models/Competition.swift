@@ -32,13 +32,6 @@ extension Competition: Identifiable {
 
 extension Competition {
 
-    func fetchAssociation(completion: @escaping (Result<Association, GoalscorersError>) -> Void) {
-        associationRef?.fetch(completion: completion)
-    }
-}
-
-extension Competition {
-
     static var sample: Competition {
         Competition(
             name: "Ligue 1",

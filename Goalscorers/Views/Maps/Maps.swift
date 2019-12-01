@@ -36,7 +36,7 @@ struct Maps: View {
 private extension Maps {
 
     func onAppear() {
-        Association.fetchAll { result in
+        fetchAllAssociations { result in
             switch result {
             case .failure:
                 break
