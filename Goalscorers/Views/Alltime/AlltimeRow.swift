@@ -28,6 +28,7 @@ struct AlltimeRow: View {
 private extension AlltimeRow {
 
     func onAppear() {
+        print("item.url: \(item.url)")
         item.fetchCompetition { result in
             switch result {
             case .failure:

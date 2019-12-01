@@ -12,6 +12,7 @@ struct Current: View {
     // Previewでいじれるように基本的にすべてのメンバ変数をprivate(set)にする
     @State private(set) var items: [Scorer] = []
     @State private(set) var isSafariViewPresented = false
+    @State private(set) var targetURL: URL!
 
     var body: some View {
         NavigationView {
@@ -20,9 +21,10 @@ struct Current: View {
                     .contentShape(Rectangle())
                     .onTapGesture {
                         self.isSafariViewPresented = true
+                        self.targetURL = item.url // SafariViewがキャッシュされるため？タップ時に（動的に）URLを設定しなおす必要がある
                     }
                     .sheet(isPresented: self.$isSafariViewPresented) {
-                        SafariView(url: item.url)
+                        SafariView(url: self.targetURL)
                     }
             }
             .navigationBarTitle("Current season")
