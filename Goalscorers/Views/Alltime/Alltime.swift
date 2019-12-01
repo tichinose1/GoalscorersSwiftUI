@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Alltime: View {
     @State private(set) var items: [OverallScorer] = []
-    @State private var isSafariViewPresented: Bool = false
+    @State private(set) var isSafariViewPresented: Bool = false
 
     var body: some View {
         NavigationView {

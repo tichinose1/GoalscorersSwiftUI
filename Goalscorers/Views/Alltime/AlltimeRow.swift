@@ -10,8 +10,8 @@ import SwiftUI
 
 struct AlltimeRow: View {
     private(set) var item: OverallScorer
-    @State private var competitionName = ""
-    @State private var regionCode = "WW"
+    @State private(set) var competitionName = ""
+    @State private(set) var regionCode = "WW"
 
     var body: some View {
         HStack {
@@ -50,6 +50,10 @@ private extension AlltimeRow {
 
 struct AlltimeRow_Previews: PreviewProvider {
     static var previews: some View {
-        AlltimeRow(item: OverallScorer.sample)
+        AlltimeRow(
+            item: OverallScorer.sample,
+            competitionName: "インターハイ",
+            regionCode: "JP"
+        )
     }
 }

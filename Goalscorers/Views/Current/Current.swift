@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct Current: View {
+    // Previewでいじれるように基本的にすべてのメンバ変数をprivate(set)にする
     @State private(set) var items: [Scorer] = []
-    @State private var isSafariViewPresented = false
+    @State private(set) var isSafariViewPresented = false
 
     var body: some View {
         NavigationView {

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Players: View {
     @State private(set) var items: [Player] = []
-    @State private var isSafariViewPresented: Bool = false
+    @State private(set) var isSafariViewPresented: Bool = false
 
     var body: some View {
         NavigationView {
@@ -48,6 +48,8 @@ private extension Players {
 
 struct Players_Previews: PreviewProvider {
     static var previews: some View {
-        Players(items: Player.samples)
+        Group {
+            Players(items: Player.samples, isSafariViewPresented: true)
+        }
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PlayersRow: View {
     private(set) var item: Player
-    @State private var regionCode = "WW"
+    @State private(set) var regionCode = "WW"
 
     var body: some View {
         HStack {
@@ -40,6 +40,9 @@ private extension PlayersRow {
 
 struct PlayersRow_Previews: PreviewProvider {
     static var previews: some View {
-        PlayersRow(item: Player.sample)
+        PlayersRow(
+            item: Player.sample,
+            regionCode: "PT"
+        )
     }
 }

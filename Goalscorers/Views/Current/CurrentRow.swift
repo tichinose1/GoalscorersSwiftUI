@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CurrentRow: View {
     private(set) var item: Scorer
-    @State private var regionCode = "WW"
+    @State private(set) var regionCode = "WW"
 
     var body: some View {
         HStack {
