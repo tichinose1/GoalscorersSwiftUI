@@ -10,8 +10,8 @@ import SwiftUI
 
 struct Current: View {
     // Previewでいじれるように基本的にすべてのメンバ変数をprivate(set)にする
-    @State private(set) var items: [Scorer] = []
-    @State private(set) var selectedItem: Scorer?
+    @State private(set) var items: [Doc<Scorer>] = []
+    @State private(set) var selectedItem: Doc<Scorer>?
 
     var body: some View {
         NavigationView {
@@ -25,7 +25,7 @@ struct Current: View {
                     }
                     // SafariViewがキャッシュされるため？isPresentedではなくitemの方を使う
                     .sheet(item: self.$selectedItem) { item in
-                        SafariView(url: item.url)
+                        SafariView(url: item.data.url)
                     }
             }
             .navigationBarTitle("Current season")
@@ -50,8 +50,8 @@ private extension Current {
     }
 }
 
-struct Current_Previews: PreviewProvider {
-    static var previews: some View {
-        Current(items: Scorer.samples)
-    }
-}
+//struct Current_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Current(items: Scorer.samples)
+//    }
+//}

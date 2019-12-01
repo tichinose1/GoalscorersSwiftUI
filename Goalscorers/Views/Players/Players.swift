@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct Players: View {
-    @State private(set) var items: [Player] = []
-    @State private(set) var selectedItem: Player?
+    @State private(set) var items: [Doc<Player>] = []
+    @State private(set) var selectedItem: Doc<Player>?
 
     var body: some View {
         NavigationView {
@@ -21,7 +21,7 @@ struct Players: View {
                         self.selectedItem = item
                     }
                     .sheet(item: self.$selectedItem) { item in
-                        SafariView(url: item.url)
+                        SafariView(url: item.data.url)
                     }
             }
             .navigationBarTitle("Players")
@@ -46,10 +46,10 @@ private extension Players {
     }
 }
 
-struct Players_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            Players(items: Player.samples)
-        }
-    }
-}
+//struct Players_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            Players(items: Player.samples)
+//        }
+//    }
+//}

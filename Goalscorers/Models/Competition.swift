@@ -23,13 +23,6 @@ struct Competition: Decodable {
     }
 }
 
-extension Competition: Identifiable {
-
-    var id: String {
-        name
-    }
-}
-
 extension Competition {
 
     static var sample: Competition {

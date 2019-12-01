@@ -24,13 +24,6 @@ struct Association: Decodable {
     }
 }
 
-extension Association: Identifiable {
-
-    var id: String {
-        regionCode
-    }
-}
-
 extension Association {
 
     static var sample: Association {

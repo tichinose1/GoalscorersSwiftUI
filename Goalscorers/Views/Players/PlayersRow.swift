@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct PlayersRow: View {
-    private(set) var item: Player
+    private(set) var item: Doc<Player>
     @State private(set) var regionCode = "WW"
 
     var body: some View {
         HStack {
             Image(regionCode)
-            Text(item.name)
+            Text(item.data.name)
             Spacer()
         }
         .onAppear {
@@ -27,22 +27,22 @@ struct PlayersRow: View {
 private extension PlayersRow {
 
     func onAppear() {
-        item.associationRef?.fetch { (result: Result<Association, GoalscorersError>) in
+        item.data.associationRef?.fetch { (result: Result<Doc<Association>, GoalscorersError>) in
             switch result {
             case .failure:
                 break
             case .success(let item):
-                self.regionCode = item.regionCode
+                self.regionCode = item.data.regionCode
             }
         }
     }
 }
 
-struct PlayersRow_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayersRow(
-            item: Player.sample,
-            regionCode: "PT"
-        )
-    }
-}
+//struct PlayersRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlayersRow(
+//            item: Player.sample,
+//            regionCode: "PT"
+//        )
+//    }
+//}

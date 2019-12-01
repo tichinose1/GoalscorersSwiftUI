@@ -24,13 +24,6 @@ struct Player: Decodable {
     }
 }
 
-extension Player: Identifiable {
-
-    var id: String {
-        url.absoluteString
-    }
-}
-
 extension Player {
 
     static var sample: Player {

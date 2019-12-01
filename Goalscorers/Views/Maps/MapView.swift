@@ -13,7 +13,7 @@ struct MapView: UIViewRepresentable {
     typealias UIViewType = MKMapView
 
     @EnvironmentObject var store: Store
-    @Binding var associations: [Association]
+    @Binding var associations: [Doc<Association>]
 
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
@@ -41,7 +41,7 @@ struct MapView: UIViewRepresentable {
             guard let annotation = annotation as? AssociationAnnotation else { fatalError() }
             let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier, for: annotation)
             annotationView.canShowCallout = true
-            let uiImage = UIImage(named: annotation.association.regionCode)!
+            let uiImage = UIImage(named: annotation.association.data.regionCode)!
             annotationView.leftCalloutAccessoryView = UIImageView(image: uiImage)
             annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             return annotationView

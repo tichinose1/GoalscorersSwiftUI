@@ -9,14 +9,14 @@
 import MapKit
 
 final class AssociationAnnotation: MKPointAnnotation {
-    let association: Association
+    let association: Doc<Association>
 
-    init(association: Association) {
+    init(association: Doc<Association>) {
         self.association = association
 
         super.init()
 
-        self.coordinate = CLLocationCoordinate2D(latitude: association.coordinate.latitude, longitude: association.coordinate.longitude)
-        self.title = association.name
+        self.coordinate = CLLocationCoordinate2D(latitude: association.data.coordinate.latitude, longitude: association.data.coordinate.longitude)
+        self.title = association.data.name
     }
 }

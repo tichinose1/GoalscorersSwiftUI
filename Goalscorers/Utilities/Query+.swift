@@ -8,33 +8,33 @@
 
 import Firebase
 
-func fetchLatestScorers(completion: @escaping (Result<[Scorer], GoalscorersError>) -> Void) {
+func fetchLatestScorers(completion: @escaping (Result<[Doc<Scorer>], GoalscorersError>) -> Void) {
     Firestore.firestore().collection("scorers").whereField("season", isGreaterThan: "2018").fetch(completion: completion)
 }
 
-func fetchAllOverallScorers(completion: @escaping (Result<[OverallScorer], GoalscorersError>) -> Void) {
+func fetchAllOverallScorers(completion: @escaping (Result<[Doc<OverallScorer>], GoalscorersError>) -> Void) {
     Firestore.firestore().collection("overall_scorers").fetch(completion: completion)
 }
 
-func fetchAllPlayers(completion: @escaping (Result<[Player], GoalscorersError>) -> Void) {
+func fetchAllPlayers(completion: @escaping (Result<[Doc<Player>], GoalscorersError>) -> Void) {
     Firestore.firestore().collection("players").fetch(completion: completion)
 }
 
-func fetchAllAssociations(completion: @escaping (Result<[Association], GoalscorersError>) -> Void) {
+func fetchAllAssociations(completion: @escaping (Result<[Doc<Association>], GoalscorersError>) -> Void) {
     Firestore.firestore().collection("associations").fetch(completion: completion)
 }
 
-func fetchAllCompetitions(completion: @escaping (Result<[Competition], GoalscorersError>) -> Void) {
-    Firestore.firestore().collection("competitions").fetch(completion: completion)
+func fetchCompetitions(associationRef: DocumentReference, completion: @escaping (Result<[Doc<Competition>], GoalscorersError>) -> Void) {
+    Firestore.firestore().collection("competitions").whereField("association_ref", isEqualTo: associationRef).fetch(completion: completion)
 }
 
 import FirebaseFirestoreSwift
 
 private extension Query {
 
-    func fetch<T: Decodable>(completion: @escaping (Result<[T], GoalscorersError>) -> Void) {
+    func fetch<T: Decodable>(completion: @escaping (Result<[Doc<T>], GoalscorersError>) -> Void) {
         addSnapshotListener { snapshot, error in
-            var result: Result<[T], GoalscorersError>
+            var result: Result<[Doc<T>], GoalscorersError>
             defer {
                 completion(result)
             }
@@ -47,7 +47,13 @@ private extension Query {
                 return
             }
             do {
-                let items = try snapshot.documents.map { try $0.data(as: T.self)! }
+                let items = try snapshot.documents.map {
+                    Doc(
+                        documentID: $0.documentID,
+                        reference: $0.reference,
+                        data: try $0.data(as: T.self)!
+                    )
+                }
                 result = .success(items)
             } catch {
                 result = .failure(.unknown)

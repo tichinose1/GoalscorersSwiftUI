@@ -9,26 +9,26 @@
 import SwiftUI
 
 struct Competitions: View {
-    private(set) var association: Association!
-    @State private(set) var items: [Competition] = []
+    private(set) var association: Doc<Association>!
+    @State private(set) var items: [Doc<Competition>] = []
 
     var body: some View {
         List(items) { item in
-            NavigationLink(destination: Text(item.name)) {
-                CompetitionsRow(item: item, regionCode: self.association.regionCode)
+            NavigationLink(destination: Text(item.data.name)) {
+                CompetitionsRow(item: item, regionCode: self.association.data.regionCode)
             }
         }
         .onAppear {
             self.onAppear()
         }
-        .navigationBarTitle(association.name)
+        .navigationBarTitle(association.data.name)
     }
 }
 
 private extension Competitions {
 
     func onAppear() {
-        fetchAllCompetitions { result in
+        fetchCompetitions(associationRef: association.reference!) { result in
             switch result {
             case .failure:
                 break

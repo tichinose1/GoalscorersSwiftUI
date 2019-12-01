@@ -11,9 +11,9 @@ import FirebaseFirestoreSwift
 
 extension DocumentReference {
 
-    func fetch<T: Decodable>(completion: @escaping (Result<T, GoalscorersError>) -> Void) {
+    func fetch<T: Decodable>(completion: @escaping (Result<Doc<T>, GoalscorersError>) -> Void) {
         getDocument { snapshot, error in
-            var result: Result<T, GoalscorersError>
+            var result: Result<Doc<T>, GoalscorersError>
             defer {
                 completion(result)
             }
@@ -26,7 +26,11 @@ extension DocumentReference {
                 return
             }
             do {
-                let item = try snapshot.data(as: T.self)!
+                let item = Doc(
+                    documentID: snapshot.documentID,
+                    reference: snapshot.reference,
+                    data: try snapshot.data(as: T.self)!
+                )
                 result = .success(item)
             } catch {
                 result = .failure(.unknown)

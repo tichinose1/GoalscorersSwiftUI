@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AlltimeRow: View {
-    private(set) var item: OverallScorer
+    private(set) var item: Doc<OverallScorer>
     @State private(set) var competitionName = ""
     @State private(set) var regionCode = "WW"
 
@@ -28,20 +28,20 @@ struct AlltimeRow: View {
 private extension AlltimeRow {
 
     func onAppear() {
-        print("item.url: \(item.url)")
-        item.competitionRef?.fetch { (result: Result<Competition, GoalscorersError>) in
+        print("item.url: \(item.data.url)")
+        item.data.competitionRef?.fetch { (result: Result<Doc<Competition>, GoalscorersError>) in
             switch result {
             case .failure:
                 break
             case .success(let item):
-                self.competitionName = item.name
+                self.competitionName = item.data.name
                 
-                item.associationRef?.fetch { (result: Result<Association, GoalscorersError>) in
+                item.data.associationRef?.fetch { (result: Result<Doc<Association>, GoalscorersError>) in
                     switch result {
                     case .failure:
                         break
                     case .success(let item):
-                        self.regionCode = item.regionCode
+                        self.regionCode = item.data.regionCode
                     }
                 }
             }
@@ -49,12 +49,12 @@ private extension AlltimeRow {
     }
 }
 
-struct AlltimeRow_Previews: PreviewProvider {
-    static var previews: some View {
-        AlltimeRow(
-            item: OverallScorer.sample,
-            competitionName: "インターハイ",
-            regionCode: "JP"
-        )
-    }
-}
+//struct AlltimeRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AlltimeRow(
+//            item: OverallScorer.sample,
+//            competitionName: "インターハイ",
+//            regionCode: "JP"
+//        )
+//    }
+//}

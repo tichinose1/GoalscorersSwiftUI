@@ -22,13 +22,6 @@ struct OverallScorer: Decodable {
     }
 }
 
-extension OverallScorer: Identifiable {
-
-    var id: String {
-        url.absoluteString
-    }
-}
-
 extension OverallScorer {
 
     static var sample: OverallScorer {

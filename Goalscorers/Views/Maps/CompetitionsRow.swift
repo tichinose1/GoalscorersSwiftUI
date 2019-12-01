@@ -9,20 +9,20 @@
 import SwiftUI
 
 struct CompetitionsRow: View {
-    private(set) var item: Competition
+    private(set) var item: Doc<Competition>
     @State private(set) var regionCode: String
 
     var body: some View {
         HStack {
             Image(regionCode)
-            Text(item.name)
+            Text(item.data.name)
             Spacer()
         }
     }
 }
 
-struct CompetitionsRow_Previews: PreviewProvider {
-    static var previews: some View {
-        CompetitionsRow(item: Competition.sample, regionCode: "WW")
-    }
-}
+//struct CompetitionsRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CompetitionsRow(item: Competition.sample, regionCode: "WW")
+//    }
+//}

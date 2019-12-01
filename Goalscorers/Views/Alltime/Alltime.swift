@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct Alltime: View {
-    @State private(set) var items: [OverallScorer] = []
-    @State private(set) var selectedItem: OverallScorer?
+    @State private(set) var items: [Doc<OverallScorer>] = []
+    @State private(set) var selectedItem: Doc<OverallScorer>?
 
     var body: some View {
         NavigationView {
@@ -21,7 +21,7 @@ struct Alltime: View {
                         self.selectedItem = item
                     }
                     .sheet(item: self.$selectedItem) { item in
-                        SafariView(url: item.url)
+                        SafariView(url: item.data.url)
                     }
             }
             .navigationBarTitle("All-time top scorers")
@@ -46,8 +46,8 @@ private extension Alltime {
     }
 }
 
-struct Alltime_Previews: PreviewProvider {
-    static var previews: some View {
-        Alltime(items: OverallScorer.samples)
-    }
-}
+//struct Alltime_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Alltime(items: OverallScorer.samples)
+//    }
+//}

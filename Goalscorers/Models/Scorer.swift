@@ -27,13 +27,6 @@ struct Scorer: Decodable {
     }
 }
 
-extension Scorer: Identifiable {
-
-    var id: String {
-        url.absoluteString
-    }
-}
-
 extension Scorer {
 
     static var sample: Scorer {

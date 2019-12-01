@@ -6,8 +6,11 @@
 //  Copyright © 2019 tichinose1. All rights reserved.
 //
 
+import Firebase
+
 struct Doc<T: Decodable> {
     var documentID: String
+    var reference: DocumentReference?
     var data: T
 }
 
