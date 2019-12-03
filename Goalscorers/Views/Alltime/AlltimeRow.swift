@@ -49,12 +49,12 @@ private extension AlltimeRow {
     }
 }
 
-//struct AlltimeRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AlltimeRow(
-//            item: OverallScorer.sample,
-//            competitionName: "インターハイ",
-//            regionCode: "JP"
-//        )
-//    }
-//}
+struct AlltimeRow_Previews: PreviewProvider {
+    static var previews: some View {
+        AlltimeRow(
+            item: SampleData.overallScorers[0],
+            competitionName: "インターハイ",
+            regionCode: "JP"
+        )
+    }
+}

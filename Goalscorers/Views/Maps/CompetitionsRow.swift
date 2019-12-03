@@ -21,8 +21,8 @@ struct CompetitionsRow: View {
     }
 }
 
-//struct CompetitionsRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CompetitionsRow(item: Competition.sample, regionCode: "WW")
-//    }
-//}
+struct CompetitionsRow_Previews: PreviewProvider {
+    static var previews: some View {
+        CompetitionsRow(item: SampleData.competitions[0], regionCode: "WW")
+    }
+}

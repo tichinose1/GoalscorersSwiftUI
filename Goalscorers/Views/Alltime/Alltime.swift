@@ -46,8 +46,8 @@ private extension Alltime {
     }
 }
 
-//struct Alltime_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Alltime(items: OverallScorer.samples)
-//    }
-//}
+struct Alltime_Previews: PreviewProvider {
+    static var previews: some View {
+        Alltime(items: SampleData.overallScorers)
+    }
+}

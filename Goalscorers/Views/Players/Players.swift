@@ -46,10 +46,10 @@ private extension Players {
     }
 }
 
-//struct Players_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            Players(items: Player.samples)
-//        }
-//    }
-//}
+struct Players_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            Players(items: SampleData.players)
+        }
+    }
+}

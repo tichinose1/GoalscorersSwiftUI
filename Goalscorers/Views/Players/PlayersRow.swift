@@ -38,11 +38,11 @@ private extension PlayersRow {
     }
 }
 
-//struct PlayersRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PlayersRow(
-//            item: Player.sample,
-//            regionCode: "PT"
-//        )
-//    }
-//}
+struct PlayersRow_Previews: PreviewProvider {
+    static var previews: some View {
+        PlayersRow(
+            item: SampleData.players[0],
+            regionCode: "PT"
+        )
+    }
+}

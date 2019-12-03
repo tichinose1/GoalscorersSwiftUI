@@ -12,12 +12,7 @@ struct Maps: View {
     @EnvironmentObject private var store: Store
     @State private(set) var items: [Doc<Association>] = []
     private var selectedAssociation: Doc<Association> {
-        items.first { $0.id == store.selectedAssociationID }
-            ?? Doc<Association>(
-                documentID: "1",
-                reference: nil,
-                data: Association.sample
-            )
+        items.first { $0.id == store.selectedAssociationID } ?? SampleData.associations[0]
     }
 
     var body: some View {
@@ -49,8 +44,8 @@ private extension Maps {
     }
 }
 
-//struct Maps_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Maps()
-//    }
-//}
+struct Maps_Previews: PreviewProvider {
+    static var previews: some View {
+        Maps(items: SampleData.associations)
+    }
+}

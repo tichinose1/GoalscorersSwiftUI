@@ -47,6 +47,6 @@ private extension CurrentRow {
 
 struct CurrentRow_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentRow(item: SampleData.scorer)
+        CurrentRow(item: SampleData.scorers[0])
     }
 }

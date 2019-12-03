@@ -22,26 +22,3 @@ struct Competition: Decodable {
         case associationRef = "association_ref"
     }
 }
-
-extension Competition {
-
-    static var sample: Competition {
-        Competition(
-            name: "Ligue 1",
-            kind: "club",
-            order: 0,
-            associationRef: nil
-        )
-    }
-
-    static var samples: [Competition] {
-        return [
-            Competition(
-                name: "Ligue 1",
-                kind: "club",
-                order: 0,
-                associationRef: nil
-            )
-        ]
-    }
-}

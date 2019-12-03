@@ -23,26 +23,3 @@ struct Association: Decodable {
         case order
     }
 }
-
-extension Association {
-
-    static var sample: Association {
-        Association(
-            regionCode: "KR",
-            name: "South Korea",
-            coordinate: GeoPoint(latitude: 37.55, longitude: 126.966667),
-            order: 0
-        )
-    }
-
-    static var samples: [Association] {
-        return [
-            Association(
-                regionCode: "KR",
-                name: "South Korea",
-                coordinate: GeoPoint(latitude: 37.55, longitude: 126.966667),
-                order: 0
-            )
-        ]
-    }
-}
