@@ -9,13 +9,20 @@
 import SwiftUI
 
 struct ScorersRow: View {
+    private(set) var regionCode: String
+    private(set) var competitionName: String
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image(regionCode)
+            Text(competitionName)
+            Spacer()
+        }
     }
 }
 
 struct ScorersRow_Previews: PreviewProvider {
     static var previews: some View {
-        ScorersRow()
+        ScorersRow(regionCode: "WW", competitionName: "hoge")
     }
 }
