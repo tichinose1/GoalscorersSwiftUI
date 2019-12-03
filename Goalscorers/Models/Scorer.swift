@@ -26,26 +26,3 @@ struct Scorer: Decodable {
         case competitionRef = "competition_ref"
     }
 }
-
-extension Scorer {
-
-    static var sample: Scorer {
-        Scorer(
-            url: URL(string: "https://en.wikipedia.org/wiki/2004_Copa_Am%C3%A9rica#Goal_scorers")!,
-            title: "2004 Copa América",
-            season: "2004",
-            order: 0
-        )
-    }
-
-    static var samples: [Scorer] {
-        [
-            Scorer(
-                url: URL(string: "https://en.wikipedia.org/wiki/2004_Copa_Am%C3%A9rica#Goal_scorers")!,
-                title: "2004 Copa América",
-                season: "2004",
-                order: 0
-            )
-        ]
-    }
-}

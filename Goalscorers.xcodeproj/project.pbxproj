@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		775E50F2238CF3E500D5FA9A /* Scorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E50F1238CF3E500D5FA9A /* Scorer.swift */; };
 		7770D41723900BCE00DD0821 /* AlltimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7770D41623900BCE00DD0821 /* AlltimeRow.swift */; };
+		77743A812396939400802BB6 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77743A802396939400802BB6 /* SampleData.swift */; };
 		7779E1D423915BA3000FBCC5 /* PlayersRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779E1D323915BA3000FBCC5 /* PlayersRow.swift */; };
 		7779E1D623916261000FBCC5 /* Query+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779E1D523916261000FBCC5 /* Query+.swift */; };
 		7798BA0D2393DF8B0008D992 /* CompetitionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798BA0C2393DF8B0008D992 /* CompetitionsRow.swift */; };
@@ -45,6 +46,7 @@
 		692EB31DBB874F0AC8C9EF7D /* Pods-Goalscorers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goalscorers.release.xcconfig"; path = "Target Support Files/Pods-Goalscorers/Pods-Goalscorers.release.xcconfig"; sourceTree = "<group>"; };
 		775E50F1238CF3E500D5FA9A /* Scorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scorer.swift; sourceTree = "<group>"; };
 		7770D41623900BCE00DD0821 /* AlltimeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlltimeRow.swift; sourceTree = "<group>"; };
+		77743A802396939400802BB6 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		7779E1D323915BA3000FBCC5 /* PlayersRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersRow.swift; sourceTree = "<group>"; };
 		7779E1D523916261000FBCC5 /* Query+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query+.swift"; sourceTree = "<group>"; };
 		7798BA0C2393DF8B0008D992 /* CompetitionsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsRow.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				77E59E5D2365C5E500B6A649 /* Competition.swift */,
 				779EF4BB2367395100C3F2C4 /* Association.swift */,
 				77E0FCAA2392B25700373223 /* Doc.swift */,
+				77743A802396939400802BB6 /* SampleData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				77D38543235F4F8E0040AC5F /* MapView.swift in Sources */,
 				7798BA0D2393DF8B0008D992 /* CompetitionsRow.swift in Sources */,
 				77AD84122350C9D800A043B7 /* SafariView.swift in Sources */,
+				77743A812396939400802BB6 /* SampleData.swift in Sources */,
 				7798BE36238D7CB300AD6D17 /* DocumentSnapshot+.swift in Sources */,
 				7779E1D423915BA3000FBCC5 /* PlayersRow.swift in Sources */,
 				779C80C92376F60F00260A7D /* Store.swift in Sources */,

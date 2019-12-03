@@ -45,8 +45,8 @@ private extension CurrentRow {
     }
 }
 
-//struct CurrentRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CurrentRow(item: Scorer.sample)
-//    }
-//}
+struct CurrentRow_Previews: PreviewProvider {
+    static var previews: some View {
+        CurrentRow(item: SampleData.scorer)
+    }
+}

@@ -50,8 +50,8 @@ private extension Current {
     }
 }
 
-//struct Current_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Current(items: Scorer.samples)
-//    }
-//}
+struct Current_Previews: PreviewProvider {
+    static var previews: some View {
+        Current(items: SampleData.scorers)
+    }
+}
