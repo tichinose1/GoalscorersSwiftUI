@@ -26,7 +26,7 @@ struct Scorers: View {
                         .edgesIgnoringSafeArea(.vertical)
                 }
         }
-        .navigationBarTitle("Current season")
+        .navigationBarTitle(competition.data.name)
         .onAppear {
             self.onAppear()
         }

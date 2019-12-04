@@ -16,7 +16,7 @@ struct OverallScorerRow: View {
     var body: some View {
         HStack {
             Image(regionCode ?? "WW")
-            Text(competitionName ?? "大会名")
+            Text(competitionName ?? "")
             Spacer()
         }
         .onAppear {
