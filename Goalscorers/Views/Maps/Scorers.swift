@@ -16,7 +16,7 @@ struct Scorers: View {
 
     var body: some View {
         List(items) { item in
-            ScorersRow(regionCode: self.association.data.regionCode, competitionName: self.competition.data.name)
+            ScorersRow(regionCode: self.association.data.regionCode, item: item)
                 .contentShape(Rectangle())
                 .onTapGesture {
                     self.selectedItem = item
@@ -26,6 +26,23 @@ struct Scorers: View {
                 }
         }
         .navigationBarTitle("Current season")
+        .onAppear {
+            self.onAppear()
+        }
+    }
+}
+
+private extension Scorers {
+
+    func onAppear() {
+        fetchScorers(competitionRef: competition.reference!) { result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let items):
+                self.items = items
+            }
+        }
     }
 }
 

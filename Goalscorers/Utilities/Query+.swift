@@ -28,6 +28,10 @@ func fetchCompetitions(associationRef: DocumentReference, completion: @escaping 
     Firestore.firestore().collection("competitions").whereField("association_ref", isEqualTo: associationRef).fetch(completion: completion)
 }
 
+func fetchScorers(competitionRef: DocumentReference, completion: @escaping (Result<[Doc<Scorer>], GoalscorersError>) -> Void) {
+    Firestore.firestore().collection("scorers").whereField("competition_ref", isEqualTo: competitionRef).fetch(completion: completion)
+}
+
 import FirebaseFirestoreSwift
 
 private extension Query {
