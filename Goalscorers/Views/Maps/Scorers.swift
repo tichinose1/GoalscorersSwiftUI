@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct Scorers: View {
-    private(set) var regionCode: String
-    private(set) var competitionName: String
-    private(set) var items: [Doc<Scorer>] = []
+    private(set) var association: Doc<Association>
+    private(set) var competition: Doc<Competition>
+    @State private(set) var items: [Doc<Scorer>] = []
     @State private(set) var selectedItem: Doc<Scorer>?
 
     var body: some View {
         List(items) { item in
-            ScorersRow(regionCode: self.regionCode, competitionName: self.competitionName)
+            ScorersRow(regionCode: self.association.data.regionCode, competitionName: self.competition.data.name)
                 .contentShape(Rectangle())
                 .onTapGesture {
                     self.selectedItem = item
@@ -32,8 +32,8 @@ struct Scorers: View {
 struct Scorers_Previews: PreviewProvider {
     static var previews: some View {
         Scorers(
-            regionCode: "WW",
-            competitionName: "hoge",
+            association: SampleData.associations[0],
+            competition: SampleData.competitions[0],
             items: SampleData.scorers
         )
     }

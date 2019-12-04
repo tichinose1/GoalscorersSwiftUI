@@ -14,7 +14,9 @@ struct Competitions: View {
 
     var body: some View {
         List(items) { item in
-            NavigationLink(destination: Text(item.data.name)) {
+            NavigationLink(
+                destination: Scorers(association: self.association, competition: item)
+            ) {
                 CompetitionsRow(item: item, regionCode: self.association.data.regionCode)
             }
         }
