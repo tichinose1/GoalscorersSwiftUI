@@ -35,8 +35,8 @@ private extension Maps {
     func onAppear() {
         fetchAllAssociations { result in
             switch result {
-            case .failure:
-                break
+            case .failure(let error):
+                print(error)
             case .success(let items):
                 self.items = items
             }

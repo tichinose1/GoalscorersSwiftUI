@@ -49,6 +49,8 @@ private extension ScorerRow {
 
 struct ScorerRow_Previews: PreviewProvider {
     static var previews: some View {
-        ScorerRow(item: Scorer.samples[0])
+        ScorerRow(
+            item: Scorer.samples[0]
+        )
     }
 }

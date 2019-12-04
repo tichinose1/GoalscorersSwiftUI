@@ -10,11 +10,11 @@ import SwiftUI
 
 struct CompetitionRow: View {
     private(set) var item: Competition
-    @State private(set) var regionCode: String
+    @State private(set) var regionCode: String?
 
     var body: some View {
         HStack {
-            Image(regionCode)
+            Image(regionCode ?? "WW")
             Text(item.name)
             Spacer()
         }
@@ -23,6 +23,9 @@ struct CompetitionRow: View {
 
 struct CompetitionRow_Previews: PreviewProvider {
     static var previews: some View {
-        CompetitionRow(item: Competition.samples[0], regionCode: "WW")
+        CompetitionRow(
+            item: Competition.samples[0],
+            regionCode: "WW"
+        )
     }
 }

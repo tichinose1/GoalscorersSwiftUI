@@ -20,10 +20,10 @@ struct Competitions: View {
                 CompetitionRow(item: item.data, regionCode: self.association.data.regionCode)
             }
         }
+        .navigationBarTitle(association.data.name)
         .onAppear {
             self.onAppear()
         }
-        .navigationBarTitle(association.data.name)
     }
 }
 
@@ -32,8 +32,8 @@ private extension Competitions {
     func onAppear() {
         fetchCompetitions(associationRef: association.reference!) { result in
             switch result {
-            case .failure:
-                break
+            case .failure(let error):
+                print(error)
             case .success(let items):
                 self.items = items
             }

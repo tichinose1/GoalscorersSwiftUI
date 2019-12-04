@@ -10,13 +10,13 @@ import SwiftUI
 
 struct OverallScorerRow: View {
     private(set) var item: OverallScorer
-    @State private(set) var competitionName = ""
-    @State private(set) var regionCode = "WW"
+    @State private(set) var competitionName: String?
+    @State private(set) var regionCode: String?
 
     var body: some View {
         HStack {
-            Image(regionCode)
-            Text(competitionName)
+            Image(regionCode ?? "WW")
+            Text(competitionName ?? "大会名")
             Spacer()
         }
         .onAppear {
@@ -52,9 +52,7 @@ private extension OverallScorerRow {
 struct OverallScorerRow_Previews: PreviewProvider {
     static var previews: some View {
         OverallScorerRow(
-            item: OverallScorer.samples[0],
-            competitionName: "インターハイ",
-            regionCode: "JP"
+            item: OverallScorer.samples[0]
         )
     }
 }

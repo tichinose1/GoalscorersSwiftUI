@@ -37,8 +37,8 @@ private extension Players {
     func onAppear() {
         fetchAllPlayers { result in
             switch result {
-            case .failure:
-                break
+            case .failure(let error):
+                print(error)
             case .success(let players):
                 self.items = players
             }
