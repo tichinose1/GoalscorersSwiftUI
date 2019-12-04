@@ -10,11 +10,11 @@ import SwiftUI
 
 struct CurrentRow: View {
     private(set) var item: Doc<Scorer>
-    @State private(set) var regionCode = "WW"
+    @State private(set) var regionCode: String?
 
     var body: some View {
         HStack {
-            Image(regionCode)
+            Image(regionCode ?? "WW")
             Text(item.data.title)
             Spacer()
         }
@@ -27,6 +27,8 @@ struct CurrentRow: View {
 private extension CurrentRow {
 
     func onAppear() {
+        // イニシャライザでregionCodeを渡された場合は取りに行かない
+        if let _ = regionCode { return }
         item.data.competitionRef?.fetch { (result: Result<Doc<Competition>, GoalscorersError>) in
             switch result {
             case .failure:

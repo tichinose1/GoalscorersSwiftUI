@@ -16,7 +16,7 @@ struct Scorers: View {
 
     var body: some View {
         List(items) { item in
-            ScorersRow(regionCode: self.association.data.regionCode, item: item)
+            CurrentRow(item: item, regionCode: self.association.data.regionCode)
                 .contentShape(Rectangle())
                 .onTapGesture {
                     self.selectedItem = item
