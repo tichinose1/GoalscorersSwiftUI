@@ -16,7 +16,7 @@ struct Current: View {
     var body: some View {
         NavigationView {
             List(items) { item in
-                CurrentRow(item: item)
+                ScorerRow(item: item.data)
                     // これをいれないとSpacerがタップに反応しない
                     .contentShape(Rectangle())
                     // セルをButtonにするとImageがロード出来ないため、ジェスチャで対応する
