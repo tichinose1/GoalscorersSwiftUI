@@ -15,7 +15,7 @@ struct Alltime: View {
     var body: some View {
         NavigationView {
             List(items) { item in
-                AlltimeRow(item: item)
+                OverallScorerRow(item: item.data)
                     .contentShape(Rectangle())
                     .onTapGesture {
                         self.selectedItem = item

@@ -15,7 +15,7 @@ struct Players: View {
     var body: some View {
         NavigationView {
             List(items) { item in
-                PlayersRow(item: item)
+                PlayerRow(item: item.data)
                     .contentShape(Rectangle())
                     .onTapGesture {
                         self.selectedItem = item

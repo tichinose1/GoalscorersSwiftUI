@@ -1,5 +1,5 @@
 //
-//  CompetitionsRow.swift
+//  CompetitionRow.swift
 //  Goalscorers
 //
 //  Created by tichinose1 on 2019/12/01.
@@ -8,21 +8,21 @@
 
 import SwiftUI
 
-struct CompetitionsRow: View {
-    private(set) var item: Doc<Competition>
+struct CompetitionRow: View {
+    private(set) var item: Competition
     @State private(set) var regionCode: String
 
     var body: some View {
         HStack {
             Image(regionCode)
-            Text(item.data.name)
+            Text(item.name)
             Spacer()
         }
     }
 }
 
-struct CompetitionsRow_Previews: PreviewProvider {
+struct CompetitionRow_Previews: PreviewProvider {
     static var previews: some View {
-        CompetitionsRow(item: SampleData.competitions[0], regionCode: "WW")
+        CompetitionRow(item: Competition.samples[0], regionCode: "WW")
     }
 }

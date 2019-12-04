@@ -1,5 +1,5 @@
 //
-//  PlayersRow.swift
+//  PlayerRow.swift
 //  Goalscorers
 //
 //  Created by tichinose1 on 2019/11/29.
@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-struct PlayersRow: View {
-    private(set) var item: Doc<Player>
+struct PlayerRow: View {
+    private(set) var item: Player
     @State private(set) var regionCode = "WW"
 
     var body: some View {
         HStack {
             Image(regionCode)
-            Text(item.data.name)
+            Text(item.name)
             Spacer()
         }
         .onAppear {
@@ -24,10 +24,10 @@ struct PlayersRow: View {
     }
 }
 
-private extension PlayersRow {
+private extension PlayerRow {
 
     func onAppear() {
-        item.data.associationRef?.fetch { (result: Result<Doc<Association>, GoalscorersError>) in
+        item.associationRef?.fetch { (result: Result<Doc<Association>, GoalscorersError>) in
             switch result {
             case .failure:
                 break
@@ -38,10 +38,10 @@ private extension PlayersRow {
     }
 }
 
-struct PlayersRow_Previews: PreviewProvider {
+struct PlayerRow_Previews: PreviewProvider {
     static var previews: some View {
-        PlayersRow(
-            item: SampleData.players[0],
+        PlayerRow(
+            item: Player.samples[0],
             regionCode: "PT"
         )
     }

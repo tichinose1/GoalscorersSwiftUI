@@ -1,5 +1,5 @@
 //
-//  AlltimeRow.swift
+//  OverallScorerRow.swift
 //  Goalscorers
 //
 //  Created by tichinose1 on 2019/11/28.
@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-struct AlltimeRow: View {
-    private(set) var item: Doc<OverallScorer>
+struct OverallScorerRow: View {
+    private(set) var item: OverallScorer
     @State private(set) var competitionName = ""
     @State private(set) var regionCode = "WW"
 
@@ -25,11 +25,11 @@ struct AlltimeRow: View {
     }
 }
 
-private extension AlltimeRow {
+private extension OverallScorerRow {
 
     func onAppear() {
-        print("item.url: \(item.data.url)")
-        item.data.competitionRef?.fetch { (result: Result<Doc<Competition>, GoalscorersError>) in
+        print("item.url: \(item.url)")
+        item.competitionRef?.fetch { (result: Result<Doc<Competition>, GoalscorersError>) in
             switch result {
             case .failure:
                 break
@@ -49,10 +49,10 @@ private extension AlltimeRow {
     }
 }
 
-struct AlltimeRow_Previews: PreviewProvider {
+struct OverallScorerRow_Previews: PreviewProvider {
     static var previews: some View {
-        AlltimeRow(
-            item: SampleData.overallScorers[0],
+        OverallScorerRow(
+            item: OverallScorer.samples[0],
             competitionName: "インターハイ",
             regionCode: "JP"
         )

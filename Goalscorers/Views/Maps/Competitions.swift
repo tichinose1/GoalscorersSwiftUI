@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct Competitions: View {
-    private(set) var association: Doc<Association>!
+    private(set) var association: Doc<Association>
     @State private(set) var items: [Doc<Competition>] = []
 
     var body: some View {
@@ -17,7 +17,7 @@ struct Competitions: View {
             NavigationLink(
                 destination: Scorers(association: self.association, competition: item)
             ) {
-                CompetitionsRow(item: item, regionCode: self.association.data.regionCode)
+                CompetitionRow(item: item.data, regionCode: self.association.data.regionCode)
             }
         }
         .onAppear {
@@ -43,6 +43,9 @@ private extension Competitions {
 
 struct Competitions_Previews: PreviewProvider {
     static var previews: some View {
-        Competitions()
+        Competitions(
+            association: SampleData.associations[0],
+            items: SampleData.competitions
+        )
     }
 }
