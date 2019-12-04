@@ -26,6 +26,7 @@ struct Current: View {
                     // SafariViewがキャッシュされるため？isPresentedではなくitemの方を使う
                     .sheet(item: self.$selectedItem) { item in
                         SafariView(url: item.data.url)
+                            .edgesIgnoringSafeArea(.vertical)
                     }
             }
             .navigationBarTitle("Current season")

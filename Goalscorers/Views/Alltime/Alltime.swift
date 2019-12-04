@@ -22,6 +22,7 @@ struct Alltime: View {
                     }
                     .sheet(item: self.$selectedItem) { item in
                         SafariView(url: item.data.url)
+                            .edgesIgnoringSafeArea(.vertical)
                     }
             }
             .navigationBarTitle("All-time top scorers")
