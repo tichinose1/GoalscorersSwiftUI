@@ -34,7 +34,6 @@ struct Alltime: View {
 }
 
 private extension Alltime {
-
     func onAppear() {
         fetchAllOverallScorers { result in
             switch result {

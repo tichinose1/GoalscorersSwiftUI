@@ -61,7 +61,6 @@ struct MapView: UIViewRepresentable {
 }
 
 private extension MapView {
-
     func updateAnnotations(from mapView: MKMapView) {
         mapView.removeAnnotations(mapView.annotations)
         let newAnnotations = associations.map(AssociationAnnotation.init)

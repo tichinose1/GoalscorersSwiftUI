@@ -38,7 +38,6 @@ struct Current: View {
 }
 
 private extension Current {
-
     func onAppear() {
         fetchLatestScorers { result in
             switch result {

@@ -26,7 +26,6 @@ struct OverallScorerRow: View {
 }
 
 private extension OverallScorerRow {
-
     func onAppear() {
         print("item.url: \(item.url)")
         item.competitionRef?.fetch { (result: Result<Doc<Competition>, GoalscorersError>) in

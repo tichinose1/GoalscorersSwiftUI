@@ -34,7 +34,6 @@ struct Players: View {
 }
 
 private extension Players {
-
     func onAppear() {
         fetchAllPlayers { result in
             switch result {

@@ -25,7 +25,6 @@ struct ScorerRow: View {
 }
 
 private extension ScorerRow {
-
     func onAppear() {
         // イニシャライザでregionCodeを渡された場合は取りに行かない
         if let _ = regionCode { return }

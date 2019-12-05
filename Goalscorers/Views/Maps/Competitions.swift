@@ -28,7 +28,6 @@ struct Competitions: View {
 }
 
 private extension Competitions {
-
     func onAppear() {
         fetchCompetitions(associationRef: association.reference!) { result in
             switch result {

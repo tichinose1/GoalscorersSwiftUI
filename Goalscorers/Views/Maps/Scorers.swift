@@ -34,7 +34,6 @@ struct Scorers: View {
 }
 
 private extension Scorers {
-
     func onAppear() {
         fetchScorers(competitionRef: competition.reference!) { result in
             switch result {

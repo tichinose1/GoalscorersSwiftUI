@@ -25,7 +25,6 @@ struct PlayerRow: View {
 }
 
 private extension PlayerRow {
-
     func onAppear() {
         item.associationRef?.fetch { (result: Result<Doc<Association>, GoalscorersError>) in
             switch result {

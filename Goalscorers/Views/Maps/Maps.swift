@@ -38,7 +38,6 @@ struct Maps: View {
 }
 
 private extension Maps {
-
     func onAppear() {
         fetchAllAssociations { result in
             switch result {
