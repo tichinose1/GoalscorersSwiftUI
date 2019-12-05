@@ -11,22 +11,29 @@ import SwiftUI
 struct Maps: View {
     @EnvironmentObject private var store: Store
     @State private(set) var items: [Doc<Association>] = []
-    private var selectedAssociation: Doc<Association> {
-        items.first { $0.id == store.selectedAssociationID } ?? SampleData.associations[0]
+    private var selectedAssociation: Doc<Association>? {
+        items.first { $0.id == store.selectedAssociationID }
     }
 
     var body: some View {
         NavigationView {
             ZStack {
-                NavigationLink(destination: Competitions(association: selectedAssociation), isActive: $store.isAssociationSelected) {
+                NavigationLink(
+                    destination: Competitions(association: selectedAssociation!),
+                    isActive: $store.isAssociationSelected
+                ) {
                     EmptyView()
                 }
                 MapView(associations: $items)
                     .edgesIgnoringSafeArea(.vertical)
             }
         }
-        .onAppear(perform: self.onAppear)
-        .onDisappear { self.store.selectAssociation(id: nil) }
+        .onAppear {
+            self.onAppear()
+        }
+        .onDisappear {
+            self.store.selectAssociation(id: nil)
+        }
     }
 }
 
