@@ -31,15 +31,15 @@ private extension OverallScorerRow {
         print("item.url: \(item.url)")
         item.competitionRef?.fetch { (result: Result<Doc<Competition>, GoalscorersError>) in
             switch result {
-            case .failure:
-                break
+            case .failure(let error):
+                print(error)
             case .success(let item):
                 self.competitionName = item.data.name
                 
                 item.data.associationRef?.fetch { (result: Result<Doc<Association>, GoalscorersError>) in
                     switch result {
-                    case .failure:
-                        break
+                    case .failure(let error):
+                        print(error)
                     case .success(let item):
                         self.regionCode = item.data.regionCode
                     }

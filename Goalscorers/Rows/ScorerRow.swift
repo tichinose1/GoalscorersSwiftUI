@@ -31,13 +31,13 @@ private extension ScorerRow {
         if let _ = regionCode { return }
         item.competitionRef?.fetch { (result: Result<Doc<Competition>, GoalscorersError>) in
             switch result {
-            case .failure:
-                break
+            case .failure(let error):
+                print(error)
             case .success(let item):
                 item.data.associationRef?.fetch { (result: Result<Doc<Association>, GoalscorersError>) in
                     switch result {
-                    case .failure:
-                        break
+                    case .failure(let error):
+                        print(error)
                     case .success(let item):
                         self.regionCode = item.data.regionCode
                     }

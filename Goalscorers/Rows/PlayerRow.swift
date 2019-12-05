@@ -29,8 +29,8 @@ private extension PlayerRow {
     func onAppear() {
         item.associationRef?.fetch { (result: Result<Doc<Association>, GoalscorersError>) in
             switch result {
-            case .failure:
-                break
+            case .failure(let error):
+                print(error)
             case .success(let item):
                 self.regionCode = item.data.regionCode
             }
