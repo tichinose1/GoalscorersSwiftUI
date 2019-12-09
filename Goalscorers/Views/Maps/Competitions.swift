@@ -29,7 +29,9 @@ struct Competitions: View {
 
 private extension Competitions {
     func onAppear() {
-        fetchCompetitions(associationRef: association.reference!) { result in
+        // Previewなどでreferenceがない場合を考慮する
+        guard let ref = association.reference else { return }
+        fetchCompetitions(associationRef: ref) { result in
             switch result {
             case .failure(let error):
                 print(error)

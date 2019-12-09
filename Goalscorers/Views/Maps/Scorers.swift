@@ -35,7 +35,8 @@ struct Scorers: View {
 
 private extension Scorers {
     func onAppear() {
-        fetchScorers(competitionRef: competition.reference!) { result in
+        guard let ref = competition.reference else { return }
+        fetchScorers(competitionRef: ref) { result in
             switch result {
             case .failure(let error):
                 print(error)
