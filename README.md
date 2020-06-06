@@ -1,6 +1,6 @@
 # GoalscorersSwiftUI
 
-T.B.D.
+[goalscorer-ios](https://github.com/tichinose1/goalscorer-ios)のSwiftUI版
 
 ## 初期セットアップ
 
