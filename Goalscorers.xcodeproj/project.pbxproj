@@ -15,7 +15,6 @@
 		7779E1D623916261000FBCC5 /* Query+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779E1D523916261000FBCC5 /* Query+.swift */; };
 		7798BA0D2393DF8B0008D992 /* CompetitionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798BA0C2393DF8B0008D992 /* CompetitionRow.swift */; };
 		7798BE32238D716E00AD6D17 /* OverallScorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798BE31238D716E00AD6D17 /* OverallScorer.swift */; };
-		7798BE36238D7CB300AD6D17 /* DocumentSnapshot+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798BE35238D7CB300AD6D17 /* DocumentSnapshot+.swift */; };
 		7798BE38238D851300AD6D17 /* ScorerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798BE37238D851300AD6D17 /* ScorerRow.swift */; };
 		779C80C92376F60F00260A7D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C80C82376F60F00260A7D /* Store.swift */; };
 		779C80CB2376F6B000260A7D /* Competitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C80CA2376F6B000260A7D /* Competitions.swift */; };
@@ -53,7 +52,6 @@
 		7779E1D523916261000FBCC5 /* Query+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query+.swift"; sourceTree = "<group>"; };
 		7798BA0C2393DF8B0008D992 /* CompetitionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionRow.swift; sourceTree = "<group>"; };
 		7798BE31238D716E00AD6D17 /* OverallScorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallScorer.swift; sourceTree = "<group>"; };
-		7798BE35238D7CB300AD6D17 /* DocumentSnapshot+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentSnapshot+.swift"; sourceTree = "<group>"; };
 		7798BE37238D851300AD6D17 /* ScorerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorerRow.swift; sourceTree = "<group>"; };
 		779C80C82376F60F00260A7D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		779C80CA2376F6B000260A7D /* Competitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competitions.swift; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 		77D3853D235DED6A0040AC5F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				7798BE35238D7CB300AD6D17 /* DocumentSnapshot+.swift */,
 				7779E1D523916261000FBCC5 /* Query+.swift */,
 				77E38A6C2392B3F800EBE2B6 /* DocumentReference+.swift */,
 			);
@@ -365,7 +362,6 @@
 				7798BA0D2393DF8B0008D992 /* CompetitionRow.swift in Sources */,
 				77AD84122350C9D800A043B7 /* SafariView.swift in Sources */,
 				77743A812396939400802BB6 /* SampleData.swift in Sources */,
-				7798BE36238D7CB300AD6D17 /* DocumentSnapshot+.swift in Sources */,
 				7779E1D423915BA3000FBCC5 /* PlayerRow.swift in Sources */,
 				779C80C92376F60F00260A7D /* Store.swift in Sources */,
 				7798BE38238D851300AD6D17 /* ScorerRow.swift in Sources */,
