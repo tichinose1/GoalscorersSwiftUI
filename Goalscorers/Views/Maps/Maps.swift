@@ -19,7 +19,7 @@ struct Maps: View {
         NavigationView {
             ZStack {
                 NavigationLink(
-                    destination: Competitions(association: selectedAssociation!),
+                    destination: Competitions(association: selectedAssociation ?? Doc(documentID: "", reference: nil, data: Association.samples[0])),
                     isActive: $store.isAssociationSelected
                 ) {
                     EmptyView()
