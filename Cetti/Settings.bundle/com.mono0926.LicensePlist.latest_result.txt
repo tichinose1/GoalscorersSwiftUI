@@ -1,0 +1,108 @@
+name: abseil, nameSpecified: 
+body: 
+                   …
+version: 0.20200225.0
+
+name: BoringSSL-GRPC, nameSpecified: 
+body: BoringSSL is a fork …
+version: 0.0.7
+
+name: Firebase, nameSpecified: 
+body: 
+                   …
+version: 6.27.0
+
+name: FirebaseAnalytics, nameSpecified: 
+body: Copyright 2020 Googl…
+version: 6.6.1
+
+name: FirebaseAuth, nameSpecified: 
+body: 
+                   …
+version: 6.6.0
+
+name: FirebaseCore, nameSpecified: 
+body: 
+                   …
+version: 6.8.0
+
+name: FirebaseCoreDiagnostics, nameSpecified: 
+body: 
+                   …
+version: 1.4.0
+
+name: FirebaseFirestore, nameSpecified: 
+body: 
+                   …
+version: 1.16.0
+
+name: FirebaseFirestoreSwift, nameSpecified: 
+body: 
+                   …
+version: 0.3.0
+
+name: FirebaseInstallations, nameSpecified: 
+body: 
+                   …
+version: 1.4.0
+
+name: GoogleAppMeasurement, nameSpecified: 
+body: Copyright 2020 Googl…
+version: 6.6.1
+
+name: GoogleDataTransport, nameSpecified: 
+body: 
+                   …
+version: 6.2.1
+
+name: GoogleDataTransportCCTSupport, nameSpecified: 
+body: 
+                   …
+version: 3.2.0
+
+name: GoogleUtilities, nameSpecified: 
+body: 
+                   …
+version: 6.6.0
+
+name: gRPC-C++, nameSpecified: 
+body: 
+                   …
+version: 
+
+name: gRPC-Core, nameSpecified: 
+body: 
+                   …
+version: 1.28.2
+
+name: GTMSessionFetcher, nameSpecified: 
+body: 
+                   …
+version: 1.4.0
+
+name: leveldb-library, nameSpecified: 
+body: Copyright (c) 2011 T…
+version: 1.22
+
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 2.15.1
+
+name: nanopb, nameSpecified: 
+body: Copyright (c) 2011 P…
+version: 1.30905.0
+
+name: PromisesObjC, nameSpecified: 
+body: 
+                   …
+version: 1.2.9
+
+name: SwiftLint, nameSpecified: 
+body: The MIT License (MIT…
+version: 0.39.2
+
+add-version-numbers: false
+
+LicensePlist Version: 2.15.0
